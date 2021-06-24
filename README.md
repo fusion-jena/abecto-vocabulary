@@ -2,7 +2,7 @@
 
 The ABECTO Vocabulary (AV) is vocabulary for the description of execution plans and results of the [ABox Evaluation and Comparison Tool for Ontologies (ABECTO)](https://github.com/fusion-jena/abecto). It reuses …
 
-## Competency Questions
+## Scope of the Vocabulary
 
 The vocabulary is designed to cover the following competency questions.
 
@@ -27,41 +27,19 @@ The vocabulary is designed to cover the following competency questions.
 
 ### Quality Data
 
-Measurements, Deviations, Omissions, Issues (e.g. Wrong Object Property Values / Data Property Values, other issues)
-
-* 
+* What object property or data property values of which resource in a dataset are known to be wrong?
+* What data property values of which corresponding resources of two dataset deviate?
+* What object property values of which corresponding resources in a category of two datasets do not correspond to each other?
+* Which further issues have been found for a dataset?
+* For which resources in a dataset does no corresponding resource exist in another dataset?
+* Which measurements have been measured for a dataset with which parameters?
 
 ## Model
 
 ![Schema visualization of the ABECTO Vocabulary](abecto-voc.svg)
 
-## Topics
+### Related Vocabularies (Re-Use Candidates)
 
-### Category
-
- * http://www.linkedmodel.org/schema/vaem#Domain
- * http://purl.org/cwmo/#KnowledgeDomain
-
-### Measurement
-
-* ```
-  @prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
-  ```
-
-### Expectation/Wrong Value Annotation
-* Do not state, something is right, just state something is wrong
-    * reuse Issue
-
-### Pipeline
-* Node
-    * https://www.w3.org/TR/prov-o/#SoftwareAgent
-    * https://www.w3.org/TR/prov-o/#Activity
-        * not for the plan, but the result
-* Edge
-    * https://www.w3.org/TR/prov-o/#wasInformedBy
-        * not for the plan, but the result
-
-## Related Vocabularies (Re-Use Candidates)
 * Ontology Quality
     * dqv 	http://www.w3.org/ns/dqv#    https://www.w3.org/ns/dqv.ttl   https://www.w3.org/TR/vocab-dqv/
     * daq 	http://purl.org/eis/vocab/daq#
@@ -74,13 +52,30 @@ Measurements, Deviations, Omissions, Issues (e.g. Wrong Object Property Values /
     * skos 	http://www.w3.org/2004/02/skos/core#
 * Ontology Mapping
     * https://moex.gitlabpages.inria.fr/alignapi/format.html
-* Pipelines / Processes
-    * CTRLont   https://technicalbuildingsystems.github.io/Ontologies/CTRLont/index-en.html
-    * Machine Learning Schema   http://www.w3.org/ns/mls
-    * http://ontologydesignpatterns.org/wiki/Community:Workflow
-    * P-Plan     http://vocab.linkeddata.es/p-plan/index.html#Plan (looks good)
+* Categories
+     * http://www.linkedmodel.org/schema/vaem#Domain
+     * http://purl.org/cwmo/#KnowledgeDomain
+
+Pipelines / Processes
+* CTRLont   https://technicalbuildingsystems.github.io/Ontologies/CTRLont/index-en.html
+* Machine Learning Schema   http://www.w3.org/ns/mls
+* http://ontologydesignpatterns.org/wiki/Community:Workflow
+* P-Plan     http://vocab.linkeddata.es/p-plan/index.html#Plan (looks good)
+* prov-o
+  * https://www.w3.org/TR/prov-o/#SoftwareAgent (for Nodes)
+  * https://www.w3.org/TR/prov-o/#Activity (for node results)
+  * https://www.w3.org/TR/prov-o/#wasInformedBy (for dependencies between results)
+
 * Provenance and Metadata
+
 * SPARQL Query Datatype
+
+* Measurements
+
+    * ```
+      @prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+      ```
+
 
 
 ## Other interesting resources
@@ -89,4 +84,4 @@ Measurements, Deviations, Omissions, Issues (e.g. Wrong Object Property Values /
 
 # Acknowledgements
 
-Thanks to [Alsayed Algergawy](https://orcid.org/0000-0002-8550-4720) and [Sheeba Samuel](https://orcid.org/0000-0002-7981-8504) for suggesting some vocabularies to reuse.
+Thanks to [Alsayed Algergawy](https://orcid.org/0000-0002-8550-4720) and [Sheeba Samuel](https://orcid.org/0000-0002-7981-8504) for suggestions of vocabulary to reuse.
