@@ -86,7 +86,9 @@ There will be a set of variables/attributes for each ??? and a defining SPARQL Q
 
 * ~~Class~~ - already occupied by common SW terminology (`rdfs:class` / `owl:class`)
 * ~~Category~~ - already occupied by common quality assurance terminology (group of  multiple quality dimensions)
-* **Aspect** - my current favorite
+* **Aspect** - my current favorite; two notable usages of the Term in vocabularies, both for similarly-shaped concerns:
+  * http://www.linkedmodel.org/schema/vaem#Aspect
+  * https://schema.org/reviewAspect
 * Scope - is more concerned with visibility than belonging
 * Domain - also describes parts of an URL ⊆ IRI; sounds to broad
 * Area - as in "research area", but this sounds to broad
@@ -98,6 +100,9 @@ There will be a set of variables/attributes for each ??? and a defining SPARQL Q
 * Relation - as known from databases, but might be mixed up with "association" or "property"
 * Shape Set/Group - term known from [SHACL](https://www.w3.org/TR/shacl/), but might cause confusion
 * Pattern Set/Group - technical description, but does not help to understand the semantic
+* Facet - synonym of aspect[¹](https://en.wiktionary.org/wiki/aspect),
+* Feature
+* Viewpoint
 
 ## Other interesting resources
 * https://iswc2017.semanticweb.org/wp-content/uploads/papers/PostersDemos/paper565.pdf
