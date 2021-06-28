@@ -80,21 +80,24 @@ Pipelines / Processes
 
 ## Open Questions
 
-* **What term to use for a set of resources in corresponding classes of different ontologies?** (There will be a set of variables/attributes for each ??? and a defining SPARQL Query with regards to an specific ontology.)
-  * ~~Class~~ - already occupied by common SW terminology (`rdfs:class` / `owl:class`)
-  * ~~Category~~ - already occupied by common quality assurance terminology (group of  multiple quality dimensions)
-  * **Aspect** - my current favorite
-  * Scope - is more concerned with visibility than belonging
-  * Domain - also describes parts of an URL ⊆ IRI; sounds to broad
-  * Area - as in "research area", but this sounds to broad
-  * ~~Field~~ - as in "research field", but this sounds to broad
-  * Concept - term use in [SKOS](https://www.w3.org/2009/08/skos-reference/skos.html) with high flexibility in meaning, but I would need a own resource, therefore "already occupied"
-  * Type - might be mixed up with data types or `rdf:type`, but that is not a show stopper
-  * Entity Type - term known from Entity-Relationship-Models
-  * Schema Set/Group - 
-  * Relation - as known from databases, but might be mixed up with "association" or "property"
-  * Shape Set/Group - term known from [SHACL](https://www.w3.org/TR/shacl/), but might cause confusion
-  * Pattern Set/Group - technical description, but does not help to understand the semantic
+###### What term to use for a set of resources in corresponding classes of different ontologies?
+
+There will be a set of variables/attributes for each ??? and a defining SPARQL Query with regards to an specific ontology. Candidates:
+
+* ~~Class~~ - already occupied by common SW terminology (`rdfs:class` / `owl:class`)
+* ~~Category~~ - already occupied by common quality assurance terminology (group of  multiple quality dimensions)
+* **Aspect** - my current favorite
+* Scope - is more concerned with visibility than belonging
+* Domain - also describes parts of an URL ⊆ IRI; sounds to broad
+* Area - as in "research area", but this sounds to broad
+* ~~Field~~ - as in "research field", but this sounds to broad
+* Concept - term use in [SKOS](https://www.w3.org/2009/08/skos-reference/skos.html) with high flexibility in meaning, but I would need a own resource, therefore "already occupied"
+* Type - might be mixed up with data types or `rdf:type`, but that is not a show stopper
+* Entity Type - term known from Entity-Relationship-Models
+* Schema Set/Group - 
+* Relation - as known from databases, but might be mixed up with "association" or "property"
+* Shape Set/Group - term known from [SHACL](https://www.w3.org/TR/shacl/), but might cause confusion
+* Pattern Set/Group - technical description, but does not help to understand the semantic
 
 ## Other interesting resources
 * https://iswc2017.semanticweb.org/wp-content/uploads/papers/PostersDemos/paper565.pdf
