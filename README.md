@@ -1,6 +1,6 @@
 # The ABECTO Vocabulary
 
-The ABECTO Vocabulary (AV) is vocabulary for the description of execution plans and results of the [ABox Evaluation and Comparison Tool for Ontologies (ABECTO)](https://github.com/fusion-jena/abecto). It reuses …
+The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the [ABox Evaluation and Comparison Tool for Ontologies (ABECTO)](https://github.com/fusion-jena/abecto). It reuses …
 
 ## Scope of the Vocabulary
 
@@ -9,34 +9,74 @@ The vocabulary is designed to cover the following competency questions.
 ### Execution Plan
 
 * What are the steps of an execution plan and which steps follow each other in which sequence?
-* What is the Java class executing a step, what are their call parameters and which predefined meta data graph will be used?
-* To which dataset will resulting primary data of a step belong?
-* To which dataset belong some primary data?
-* Which step produced some meta data or primary data in which time interval and which other data have been used to produces them?
+* What is the executing Java class of a step, what are their call parameters and which predefined meta data graph will be used?
+* To which dataset belong the resulting primary data of a step?
 
-### Categories / Scopes / Domains
+### Primary Data Graph and Meta Data Graph
 
-*"Category" also used for groups of Quality Dimensions*
+  * To which dataset belongs a primary data graph or meta data graph?
+  * Which step produced some primary data graph or meta data graph in which time interval and which other data graphs have been used to produces them?
 
-* 
+### Aspect
 
-### Resource Correspondence / Mapping
+* Which are the aspects of interest?
+* What is the key variable of an aspect?
+* How is an aspect modeled in a specific dataset?
 
-* Which resources of which dataset correspond to each other?
-* Which resources of which dataset are known to not correspond to each other
+### Resource Correspondence
+
+* Which resources correspond to each other?
+* Which resources are known to not correspond to each other?
 
 ### Quality Data
 
 * What object property or data property values of which resource in a dataset are known to be wrong?
 * What data property values of which corresponding resources of two dataset deviate?
-* What object property values of which corresponding resources in a category of two datasets do not correspond to each other?
+* What object property values of which corresponding resources that concern the same aspect and of two datasets do not correspond to each other?
 * Which further issues have been found for a dataset?
 * For which resources in a dataset does no corresponding resource exist in another dataset?
 * Which measurements have been measured for a dataset with which parameters?
 
 ## Model
 
-![Schema visualization of the ABECTO Vocabulary](abecto-voc.svg)
+Plan Execution
+
+![Visualization of the Vocabulary for Plan Execution](executionGraph.svg)
+
+Deviations
+
+![Visualization of the Vocabulary for Deviations](deviationGraph.svg)
+
+Value Omissions
+
+![Visualization of the Vocabulary for Value Omissions](valueOmissionGraph.svg)
+
+Resource Omissions
+
+![Visualization of the Vocabulary for Resource Omissions](resourceOmissionGraph.svg)
+
+Quality Measurements
+
+![Visualization of the Vocabulary for Quality Measurements](qualityMeasurementGraph.svg)
+
+Issues
+
+![Visualization of the Vocabulary for Issues](issueGraph.svg)
+
+Correspondences
+
+![Visualization of the Vocabulary for Correspondences](correspondenceGraph.svg)
+
+```turtle
+[ a av:CorrespondanceSet ;
+  av:containdResource x:qwe, x:sdf, y:sdfs, z:hfg ;
+  av:affectedAspect :someAspect ]
+[ a av:NoCorrespondanceSet ;
+  av:containdResource x:qwe, x:sdf, y:sdfs, z:hfg ;
+  av:affectedAspect :someAspect ]
+```
+
+
 
 ### Related Vocabularies (Re-Use Candidates)
 
@@ -77,6 +117,8 @@ Pipelines / Processes
     * ```
       @prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
       ```
+
+* https://www.w3.org/TR/vocab-dqv/#dqv:QualityAnnotation requires  [oa:motivatedBy](https://www.w3.org/TR/2016/CR-annotation-vocab-20160705/#motivatedby) statement
 
 ## Open Questions
 
