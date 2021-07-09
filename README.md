@@ -68,12 +68,13 @@ Correspondences
 ![Visualization of the Vocabulary for Correspondences](correspondenceGraph.svg)
 
 ```turtle
-[ a av:CorrespondanceSet ;
-  av:containdResource x:qwe, x:sdf, y:sdfs, z:hfg ;
-  av:affectedAspect :someAspect ]
-[ a av:NoCorrespondanceSet ;
-  av:containdResource x:qwe, x:sdf, y:sdfs, z:hfg ;
-  av:affectedAspect :someAspect ]
+[ a av:CorrespondenceSet ;
+  av:containdResource ex2:bill, ex2:william, ex3:william, ex4:bill ;
+  av:affectedAspect ex1:people ]
+
+[ a av:NoCorrespondenceSet ;
+  av:containdResource ex2:anna, ex3:anne ;
+  av:affectedAspect ex1:people ]
 ```
 
 
@@ -149,6 +150,7 @@ There will be a set of variables/attributes for each ??? and a defining SPARQL Q
 ## Other interesting resources
 * https://iswc2017.semanticweb.org/wp-content/uploads/papers/PostersDemos/paper565.pdf
 * http://dgarijo.github.io/Widoco/doc/bestPractices/index-en.html
+* [Data on the Web Best Practices](https://www.w3.org/TR/dwbp/)
 
 # Acknowledgements
 
