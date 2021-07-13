@@ -93,15 +93,20 @@ Correspondences
     * skos 	http://www.w3.org/2004/02/skos/core#
 * Ontology Mapping
     * https://moex.gitlabpages.inria.fr/alignapi/format.html
+    * https://www.w3.org/TR/vocab-dqv/#ExpressQualLinkset
 * Categories
      * http://www.linkedmodel.org/schema/vaem#Domain
      * http://purl.org/cwmo/#KnowledgeDomain
 
 Pipelines / Processes
 * CTRLont   https://technicalbuildingsystems.github.io/Ontologies/CTRLont/index-en.html
+
 * Machine Learning Schema   http://www.w3.org/ns/mls
+
 * http://ontologydesignpatterns.org/wiki/Community:Workflow
+
 * P-Plan     http://vocab.linkeddata.es/p-plan/index.html#Plan (looks good)
+
 * prov-o
   * https://www.w3.org/TR/prov-o/#SoftwareAgent (for Nodes)
   * https://www.w3.org/TR/prov-o/#Activity (for node results)
@@ -120,6 +125,10 @@ Pipelines / Processes
       ```
 
 * https://www.w3.org/TR/vocab-dqv/#dqv:QualityAnnotation requires  [oa:motivatedBy](https://www.w3.org/TR/2016/CR-annotation-vocab-20160705/#motivatedby) statement
+
+* Quality Dimensions:
+
+    * https://www.w3.org/2016/05/ldqd
 
 ## Open Questions
 
