@@ -1,16 +1,16 @@
 @prefix av: <http://w3id.org/abecto-vocabulary#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix p-plan: <http://purl.org/net/p-plan#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix align: <http://knowledgeweb.semanticweb.org/heterogeneity/alignment#> .
-@prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ldqd: <http://www.w3.org/2016/05/ldqd#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p-plan: <http://purl.org/net/p-plan#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/abecto-vocabulary> a owl:Ontology ;
     vann:preferredNamespaceUri "http://w3id.org/abecto-vocabulary#";
