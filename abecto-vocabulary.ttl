@@ -8,6 +8,9 @@
 @prefix p-plan: <http://purl.org/net/p-plan#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix align: <http://knowledgeweb.semanticweb.org/heterogeneity/alignment#> .
+@prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
 
 <http://w3id.org/abecto-vocabulary> a owl:Ontology ;
     vann:preferredNamespaceUri "http://w3id.org/abecto-vocabulary#";
@@ -66,8 +69,18 @@ av:CorrespondenceSet a rdfs:Class ;
     rdfs:label "correspondence set"@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
-av:NoCorrespondenceSet a rdfs:Class ;
-    rdfs:label "no correspondence set"@en ;
+av:IncorrespondenceSet a rdfs:Class ;
+    rdfs:label "incorrespondence set"@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
+av:MetaDataGraph a rdfs:Class ;
+    rdfs:subclassOf rdfg:Graph , prov:Entity ;
+    rdfs:label "meta data graph"@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
+av:PrimaryDataGraph a rdfs:Class ;
+    rdfs:subclassOf rdfg:Graph , prov:Entity ;
+    rdfs:label "primary data graph"@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 
@@ -94,6 +107,12 @@ av:comparedToResource a owl:ObjectProperty ;
     .
 av:containedResource a owl:ObjectProperty ;
     rdfs:label "contained resource"@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
+av:inputMetaDataGraph a owl:ObjectProperty ;
+    rdfs:label "input meta data graph"@en ;
+    rdfs:domain av:Step ;
+    rdfs:range av:MetaDataGraph ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 
@@ -132,6 +151,12 @@ av:comparedToValue a owl:DatatypeProperty ;
     .
 av:issueType a owl:DatatypeProperty ;
     rdfs:label "issue type"@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
+av:processorClass a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "processor class"@en ;
+    rdfs:domain av:Step ;
+    rdfs:range av:JavaClass ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 

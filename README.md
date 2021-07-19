@@ -72,7 +72,7 @@ Correspondences
   av:containdResource ex2:bill, ex2:william, ex3:william, ex4:bill ;
   av:affectedAspect ex1:people ]
 
-[ a av:NoCorrespondenceSet ;
+[ a av:IncorrespondenceSet ;
   av:containdResource ex2:anna, ex3:anne ;
   av:affectedAspect ex1:people ]
 ```
