@@ -69,7 +69,7 @@ av:ValueOmission a rdfs:Class ;
     .
 av:ResourceOmission a rdfs:Class ;
     rdfs:label "resource imission"@en ;
-    rdfs:comment ""@en ;
+    rdfs:comment "A resource omission is the body (oa:hasBody) of a dqv:QualityAnnotation on a dataset (oa:hasTarget). It denotes the absent of a corresponding resource from a specified aspect (av:affectedAspect) in comparison to a resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:Issue a rdfs:Class ;
