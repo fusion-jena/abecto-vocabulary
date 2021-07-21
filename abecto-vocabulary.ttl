@@ -10,6 +10,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -17,7 +18,7 @@
     vann:preferredNamespaceUri "http://w3id.org/abecto-vocabulary#";
     vann:preferredNamespacePrefix "av";
     dcterms:title "ABECTO Vocabulary"@en;
-    dcterms:description "The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the ABox Evaluation and Comparison Tool for Ontologies (ABECTO). …"@en ;
+    dcterms:description "The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the ABox Evaluation and Comparison Tool for Ontologies (ABECTO)."@en ;
     # foaf:depiction
     # foaf:homepage
     dcterms:creator "Jan Martin Keil" ; # hotfix for https://github.com/dgarijo/Widoco/issues/285
@@ -31,13 +32,13 @@
     .
 
 av:Step a rdfs:Class ;
-    rdfs:subclassOf p-plan:Step ;
+    rdfs:subClassOf p-plan:Step ;
     rdfs:label "step"@en ;
     rdfs:comment "A single step in an ABECTO execution plan defined by the processor class, preceding steps (p-plan:isPrecededBy), parameters (av:hasParameter), and input models (av:inputMetaDataGraph)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:StepExecution a rdfs:Class ;
-    rdfs:subclassOf p-plan:Activity ;
+    rdfs:subClassOf p-plan:Activity ;
     rdfs:label "step execution"@en ;
     rdfs:comment "A step execution is an activity that executes a single step of a plan. It is determined by the correspnding step (p-plan:corresondsToStep), start and end date time (prov:startedAtTime, prov:endedAtTime), and the used primary and meta data graphs (prov:used)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
@@ -68,42 +69,59 @@ av:ValueOmission a rdfs:Class ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:ResourceOmission a rdfs:Class ;
-    rdfs:label "resource imission"@en ;
+    rdfs:label "resource omission"@en ;
     rdfs:comment "A resource omission is the body (oa:hasBody) of a dqv:QualityAnnotation on a dataset (oa:hasTarget). It denotes the absent of a corresponding resource from a specified aspect (av:affectedAspect) in comparison to a resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:Issue a rdfs:Class ;
     rdfs:label "issue"@en ;
-    rdfs:comment ""@en ;
+    rdfs:comment "An issue is the body (oa:hasBody) of a dqv:QualityAnnotation on a resource or a dataset (oa:hasTarget). It describes an issue of a certain type (av:issueType) with a description (rdfs:comment). An issue might affect a certain aspect (av:Aspect) or a certain aspect variable (av:affectedVariableName)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:CorrespondenceSet a rdfs:Class ;
     rdfs:label "correspondence set"@en ;
-    rdfs:comment ""@en ;
+    rdfs:comment "A correspondence set is a set that contains resources (av:containedResource) from a common aspect (av:affectedAspect) that represent all the same concepts. This indicates a high degree of confidence that the linked concepts can be used interchangeably across a wide range of applications (just like [skos:exactMatch](https://www.w3.org/TR/skos-reference/#mapping))."@en ;
+    vaem:rationale """The reuse of owl:sameAs and owl:equivalentClass was rejected due to the following reasons:
+* Different representations of equivalent concepts might not be exactly equivalent. Especially, they might be individuals in one dataset and classes in another dataset.
+* They do not enable an assignment to an aspect.
+
+The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reasons:
+* It is focused on the representation of alignments of exactly two datasets represented by exactly one file source.
+* They do not enable an assignment to an aspect.
+
+The reuse of [skos:exactMatch](https://www.w3.org/TR/skos-reference/#mapping) was rejected due to the following reasons:
+* It does not enable an assignment to an aspect."""@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:IncorrespondenceSet a rdfs:Class ;
     rdfs:label "incorrespondence set"@en ;
-    rdfs:comment ""@en ;
+    rdfs:comment "A incorrespondence set is a set that contains resources (av:containedResource) that represent all pairwise different concepts."@en ;
+    vaem:rationale """The reuse of owl:differentFrom, owl:disjointWith, and  owl:AllDisjointClasses was rejected due to the following reasons:
+* Different representations of resources for one aspect might be individuals in one dataset and classes in another dataset.
+* They do not enable an assignment to an aspect.
+
+The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reasons:
+* It is focused on the representation of alignments of exactly two datasets represented by exactly one file source.
+* They do not enable an assignment to an aspect."""@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:MetaDataGraph a rdfs:Class ;
-    rdfs:subclassOf rdfg:Graph , prov:Entity ;
+    rdfs:subClassOf rdfg:Graph , prov:Entity ;
     rdfs:label "meta data graph"@en ;
-    rdfs:comment ""@en ;
+    rdfs:comment "A meta data graph is a RDF graph that contains meta data of a dataset (av:associatedDataset)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:PrimaryDataGraph a rdfs:Class ;
-    rdfs:subclassOf rdfg:Graph , prov:Entity ;
+    rdfs:subClassOf rdfg:Graph , prov:Entity ;
     rdfs:label "primary data graph"@en ;
-    rdfs:comment ""@en ;
+    rdfs:comment "A meta data graph is a RDF graph that contains primary data of a dataset (av:associatedDataset)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 
 av:hasParameter a owl:ObjectProperty ;
     rdfs:label "has parameter"@en ;
-    rdfs:range av:Parameter ;
     rdfs:comment ""@en ;
+    rdfs:range av:Parameter ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:ofAspect a owl:ObjectProperty ;
@@ -114,6 +132,7 @@ av:ofAspect a owl:ObjectProperty ;
 av:affectedAspect a owl:ObjectProperty ;
     rdfs:label "affected aspect"@en ;
     rdfs:comment ""@en ;
+    rdfs:range av:Aspect ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:associatedDataset a owl:ObjectProperty ;
@@ -125,6 +144,7 @@ av:associatedDataset a owl:ObjectProperty ;
 av:comparedToDataset a owl:ObjectProperty ;
     rdfs:label "compared to dataset"@en ;
     rdfs:comment ""@en ;
+    rdfs:range dcat:Dataset ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:comparedToResource a owl:ObjectProperty ;
@@ -146,11 +166,13 @@ av:inputMetaDataGraph a owl:ObjectProperty ;
     .
 
 av:JavaClass a rdfs:Datatype ;
+    rdfs:subClassOf xsd:string ;
     rdfs:label "Java class"@en ;
     rdfs:comment ""@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:SparqlSelectQuery a rdfs:Datatype ;
+    rdfs:subClassOf xsd:string ;
     rdfs:label "SPARQL select query"@en ;
     rdfs:comment ""@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
@@ -192,7 +214,7 @@ av:comparedToValue a owl:DatatypeProperty ;
     rdfs:label "compared to value"@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
-av:issueType a owl:DatatypeProperty ;
+av:issueType a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:label "issue type"@en ;
     rdfs:comment ""@en ;
     rdfs:range xsd:string ;
