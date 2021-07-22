@@ -147,14 +147,14 @@ av:associatedDataset a owl:ObjectProperty ;
     .
 av:comparedToDataset a owl:ObjectProperty ;
     rdfs:label "compared to dataset"@en ;
-    rdfs:comment "The dataset in comparison to that there were derived some meta data, such as deviations, value omissions, resource omissions, or quality measurements."@en ;
+    rdfs:comment "The dataset in comparison to that were derived some meta data, such as deviations, value omissions, resource omissions, or quality measurements."@en ;
     rdfs:range dcat:Dataset ;
     rdfs:seeAlso av:Deviation , av:ValueOmission , av:ResourceOmission , dqv:QualityMeasurement ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:comparedToResource a owl:ObjectProperty ;
     rdfs:label "compared to resource"@en ;
-    rdfs:comment "The resource in comparison to that there were derived some meta data, such as deviations, value omissions or resource omissions."@en ;
+    rdfs:comment "The resource in comparison to that were derived some meta data, such as deviations, value omissions or resource omissions."@en ;
     rdfs:seeAlso av:Deviation , av:ValueOmission , av:ResourceOmission ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
@@ -226,7 +226,7 @@ av:affectedValue a owl:DatatypeProperty ;
     .
 av:comparedToValue a owl:DatatypeProperty ;
     rdfs:label "compared to value"@en ;
-    rdfs:comment "The value in comparison to that there were derived some meta data, such as deviations, or value omissions."@en ;
+    rdfs:comment "The value in comparison to that were derived some meta data, such as deviations, or value omissions."@en ;
     rdfs:seeAlso av:Deviation , av:ValueOmission ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
@@ -239,7 +239,7 @@ av:issueType a owl:DatatypeProperty , owl:FunctionalProperty ;
     .
 av:processorClass a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:label "processor class"@en ;
-    rdfs:comment "The Java class the processor that executes a step."@en ;
+    rdfs:comment "The Java class of the processor that executes a step."@en ;
     rdfs:domain av:Step ;
     rdfs:range av:JavaClass ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
