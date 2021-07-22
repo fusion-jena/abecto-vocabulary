@@ -77,8 +77,6 @@ Correspondences
   av:affectedAspect ex1:people ]
 ```
 
-
-
 ### Related Vocabularies (Re-Use Candidates)
 
 * Ontology Quality
