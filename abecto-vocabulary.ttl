@@ -247,13 +247,13 @@ av:processorClass a owl:DatatypeProperty , owl:FunctionalProperty ;
 
 av:markAndRecapture a dqv:Metric ;
     rdfs:label "mark and recapture"@en ;
-    rdfs:comment "Estimation of the completeness of a dataset regarding a certain aspect compared to another dataset."@en ;
+    rdfs:comment "The ratio of the completeness of a dataset regarding a certain aspect estimation using mark and recapture techniques compared to another dataset."@en ;
     dqv:inDimension ldqd:completeness ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:relativeCoverage a dqv:Metric ;
     rdfs:label "relative coverage"@en ;
-    rdfs:comment "The percentage of resources of a certain aspect in another dataset for that the assessed dataset contains a corresponding resource."@en ;
+    rdfs:comment "The ratio of resources of a certain aspect in another dataset for that the assessed dataset contains a corresponding resource."@en ;
     dqv:inDimension ldqd:completeness ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
