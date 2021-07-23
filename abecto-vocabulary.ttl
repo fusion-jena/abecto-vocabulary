@@ -192,7 +192,7 @@ av:JavaClass a rdfs:Datatype ;
     rdfs:seeAlso "https://docs.oracle.com/javase/specs/jls/se16/html/jls-6.html#jls-6.7"^^xsd:anyURI ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
-av:Sparql1_1SelectQuery a rdfs:Datatype ;
+av:Sparql11SelectQuery a rdfs:Datatype ;
     rdfs:subClassOf xsd:string ;
     rdfs:label "SPARQL select query"@en ;
     rdfs:comment "The datatype of SPARQL 1.1 select queries."@en ;
@@ -204,7 +204,7 @@ av:definingQuery a owl:DatatypeProperty ;
     rdfs:label "defining query"@en ;
     rdfs:comment "The query that defines the pattern of an aspect for a certain dataset."@en ;
     rdfs:domain av:AspectPattern ;
-    rdfs:range av:SparqlSelectQuery ;
+    rdfs:range av:Sparql11SelectQuery ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:key a owl:DatatypeProperty ;
