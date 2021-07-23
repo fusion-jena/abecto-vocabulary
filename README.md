@@ -53,7 +53,7 @@ After execution, the main graph will further contain provenance information abou
 
 ![Visualization of the Vocabulary for Deviations](deviationGraph.svg)
 
-Value Omissions should be represented inside a  meta data graph using the following schema:
+**Value Omissions** should be represented inside a  meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Value Omissions](valueOmissionGraph.svg)
 
