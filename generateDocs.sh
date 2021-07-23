@@ -5,4 +5,4 @@ then
 fi 
 
 # run WIDOCO (see https://github.com/dgarijo/Widoco#how-to-use-widoco )
-java -jar widoco.jar -uniteSections -rewriteAll -getOntologyMetadata -includeAnnotationProperties -excludeIntroduction -htaccess -outFolder docs -ontFile abecto-vocabulary.ttl
+java -jar widoco.jar -uniteSections -rewriteAll -getOntologyMetadata -excludeIntroduction -htaccess -outFolder docs -ontFile abecto-vocabulary.ttl

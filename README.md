@@ -1,6 +1,6 @@
 # The ABECTO Vocabulary
 
-The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the [ABox Evaluation and Comparison Tool for Ontologies (ABECTO)](https://github.com/fusion-jena/abecto). It reuses …
+The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the [ABox Evaluation and Comparison Tool for Ontologies (ABECTO)](https://github.com/fusion-jena/abecto).
 
 ## Scope of the Vocabulary
 
@@ -39,9 +39,15 @@ The vocabulary is designed to cover the following competency questions.
 
 ## Model
 
-Plan Execution
+The vocabulary is intended to be used in set of graphs. The main graph contains a description of the execution plan for ABECTO and the aspects of interest for comparison. The execution results will be stored in several result graphs which might be associated to a dataset:
 
-![Visualization of the Vocabulary for Plan Execution](executionGraph.svg)
+* Primary Data Graphs for dataset import and transformation results. The content and used vocabulary is completely up to the dataset creators.
+
+* Meta Data Graphs for matching and comparison results. The results will be represented using this vocabulary.
+
+After execution, the main graph will further contain provenance information about the execution and the result graphs.
+
+![Visualization of the Vocabulary for ABECTO Execution Plans and Result Provenance](executionGraph.svg)
 
 Deviations
 
@@ -71,7 +77,8 @@ Correspondences
 [ a av:CorrespondenceSet ;
   av:containdResource ex2:bill, ex2:william, ex3:william, ex4:bill ;
   av:affectedAspect ex1:people ]
-
+```
+```turtle
 [ a av:IncorrespondenceSet ;
   av:containdResource ex2:anna, ex3:anne ;
   av:affectedAspect ex1:people ]
