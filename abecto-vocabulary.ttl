@@ -117,9 +117,9 @@ The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/aligna
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:MetaDataGraph a rdfs:Class ;
-    rdfs:subClassOf rdfg:Graph , prov:Entity ;
+    rdfs:subClassOf dqv:QualityMetadata , rdfg:Graph , prov:Entity ;
     rdfs:label "meta data graph"@en ;
-    rdfs:comment "A meta data graph is a RDF graph that contains meta data of a dataset (av:associatedDataset)."@en ;
+    rdfs:comment "A meta data graph is a RDF graph that contains meta data of a dataset (dqv:computedOn)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:PrimaryDataGraph a rdfs:Class ;
