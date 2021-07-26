@@ -125,7 +125,7 @@ av:MetaDataGraph a rdfs:Class ;
 av:PrimaryDataGraph a rdfs:Class ;
     rdfs:subClassOf rdfg:Graph , prov:Entity ;
     rdfs:label "primary data graph"@en ;
-    rdfs:comment "A meta data graph is a RDF graph that contains primary data of a dataset (av:associatedDataset)."@en ;
+    rdfs:comment "A primary data graph is a RDF graph that contains primary data of a dataset (av:associatedDataset)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 
