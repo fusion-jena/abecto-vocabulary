@@ -86,4 +86,4 @@ Custom **issues** should be represented inside a  meta data graph using the foll
 
 # Acknowledgements
 
-Thanks to [Alsayed Algergawy](https://orcid.org/0000-0002-8550-4720) and [Sheeba Samuel](https://orcid.org/0000-0002-7981-8504) for suggestions of vocabulary to reuse.
+Thanks to [Alsayed Algergawy](https://orcid.org/0000-0002-8550-4720) and [Sheeba Samuel](https://orcid.org/0000-0002-7981-8504) for feedback on earlier drafts of the ABECTO vocabulary and suggestions of other vocabulary to reuse .
