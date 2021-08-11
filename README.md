@@ -9,13 +9,13 @@ The vocabulary is designed to cover the following competency questions.
 ### Execution Plan
 
 * What are the steps of an execution plan and which steps follow each other in which sequence?
-* What is the executing Java class of a step, what are their call parameters and which predefined meta data graphs will be used?
-* To which dataset will the resulting primary data of a step belong?
+* What is the executing Java class of a step, what are its call parameters and which predefined meta data graphs will be used?
+* Which dataset will the resulting primary data of a step belong to?
 
 ### Primary Data Graph and Meta Data Graph
 
-  * To which dataset belongs a primary data graph or meta data graph?
-  * Which step produced some primary data graph or meta data graph in which time interval and which other data graphs have been used to produces them?
+  * Which dataset does a primary data graph or meta data graph belong to?
+  * Which step produced some primary data graph or meta data graph in which time interval and which other data graphs have been used to produce them?
 
 ### Aspect
 
