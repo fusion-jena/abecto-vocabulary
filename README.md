@@ -74,15 +74,24 @@ Custom **issues** should be represented inside a  meta data graph using the foll
 ![Visualization of the Vocabulary for Correspondences](correspondenceGraph.svg)
 
 ```turtle
-[ a av:CorrespondenceSet ;
-  av:containdResource ex2:bill, ex2:william, ex3:william, ex4:bill ;
-  av:affectedAspect ex1:people ]
+ex2:bill av:correspondsToResource ex2:william, ex3:william, ex4:bill .
+ex1:people av:relevantResource ex2:bill, ex2:william, ex3:william, ex4:bill .
 ```
 ```turtle
-[ a av:IncorrespondenceSet ;
-  av:containdResource ex2:anna, ex3:anne ;
-  av:affectedAspect ex1:people ]
+ex2:anna av:correspondsNotToResource ex3:anne .
+ex1:people av:relevantResource ex2:anna, ex3:anne .
 ```
+
+The reuse of `owl:sameAs`, `owl:equivalentClass`, `owl:differentFrom`, `owl:disjointWith`, and `owl:AllDisjointClasses` was rejected due to the following reasons:
+* Different representations of equivalent concepts might be logically incompatible.
+* Different representations of resources for one aspect might be individuals in one dataset and classes in another dataset.
+
+The reuse of `skos:exactMatch` was rejected due to the following reasons:
+
+* It should only be used to link concepts from different datasets (see [SKOS Reference](https://www.w3.org/TR/skos-reference/#L4160)).
+
+The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reasons:
+* It is focused on the representation of alignments of exactly two datasets represented by exactly one file source.
 
 # Acknowledgements
 

@@ -89,33 +89,6 @@ av:Issue a rdfs:Class ;
     rdfs:comment "An issue is the body (oa:hasBody) of a dqv:QualityAnnotation on a resource or a dataset (oa:hasTarget). It describes an issue of a certain type (av:issueType) with a description (rdfs:comment). An issue might affect a certain aspect (av:Aspect), a certain aspect variable (av:affectedVariableName), or a certain aspect variable value (av:affectedValue)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
-av:CorrespondenceSet a rdfs:Class ;
-    rdfs:label "correspondence set"@en ;
-    rdfs:comment "A correspondence set is a set that contains resources (av:containedResource) from a common aspect (av:affectedAspect) that represent all the same concepts. This indicates a high degree of confidence that the linked concepts can be used interchangeably across a wide range of applications (just like [skos:exactMatch](https://www.w3.org/TR/skos-reference/#mapping))."@en ;
-    vaem:rationale """The reuse of owl:sameAs and owl:equivalentClass was rejected due to the following reasons:
-* Different representations of equivalent concepts might not be exactly equivalent. Especially, they might be individuals in one dataset and classes in another dataset.
-* They do not enable an assignment to an aspect.
-
-The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reasons:
-* It is focused on the representation of alignments of exactly two datasets represented by exactly one file source.
-* They do not enable an assignment to an aspect.
-
-The reuse of [skos:exactMatch](https://www.w3.org/TR/skos-reference/#mapping) was rejected due to the following reasons:
-* It does not enable an assignment to an aspect."""@en ;
-    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
-    .
-av:IncorrespondenceSet a rdfs:Class ;
-    rdfs:label "incorrespondence set"@en ;
-    rdfs:comment "A incorrespondence set is a set that contains resources (av:containedResource) that represent all pairwise different concepts."@en ;
-    vaem:rationale """The reuse of owl:differentFrom, owl:disjointWith, and owl:AllDisjointClasses was rejected due to the following reasons:
-* Different representations of resources for one aspect might be individuals in one dataset and classes in another dataset.
-* They do not enable an assignment to an aspect.
-
-The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reasons:
-* It is focused on the representation of alignments of exactly two datasets represented by exactly one file source.
-* They do not enable an assignment to an aspect."""@en ;
-    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
-    .
 av:MetaDataGraph a rdfs:Class ;
     rdfs:subClassOf dqv:QualityMetadata , rdfg:Graph , prov:Entity ;
     rdfs:label "meta data graph"@en ;
@@ -144,8 +117,8 @@ av:ofAspect a owl:ObjectProperty ;
     .
 av:affectedAspect a owl:ObjectProperty ;
     rdfs:label "affected aspect"@en ;
-    rdfs:comment "The aspect that is concerned by some meta data, such as deviations, value omissions and resource omissions, quality measurements, issues or (in-)correspondence sets."@en ;
-    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( av:QualityAnnotationBody av:QualityMeasurement av:CorrespondenceSet av:IncorrespondenceSet ) ] ;
+    rdfs:comment "The aspect that is concerned by some meta data, such as deviations, value omissions and resource omissions, quality measurements or issues."@en ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( av:QualityAnnotationBody av:QualityMeasurement ) ] ;
     rdfs:range av:Aspect ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
@@ -169,10 +142,20 @@ av:comparedToResource a owl:ObjectProperty ;
     rdfs:domain av:QualityAnnotationBody ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
-av:containedResource a owl:ObjectProperty ;
-    rdfs:label "contained resource"@en ;
-    rdfs:comment "A resource contained in a collection."@en ;
-    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( av:CorrespondenceSet av:IncorrespondenceSet ) ] ;
+av:correspondsToResource a owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty ;
+    rdfs:label "corresponds to resource"@en ;
+    rdfs:comment "A resource that corresponds to this resource."@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
+av:correspondsNotToResource a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label "corresponds not to resource"@en ;
+    rdfs:comment "A resource that not corresponds to this resource."@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
+av:relevantResource a owl:ObjectProperty ;
+    rdfs:label "relevant resource"@en ;
+    rdfs:comment "A resource that is relevant for an aspekt."@en ;
+    rdfs:domain av:Aspect ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:inputMetaDataGraph a owl:ObjectProperty ;
