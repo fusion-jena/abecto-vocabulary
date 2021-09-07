@@ -49,27 +49,27 @@ After execution, the main graph will further contain provenance information abou
 
 ![Visualization of the Vocabulary for ABECTO Execution Plans and Result Provenance](executionGraph.svg)
 
-**Deviations** should be represented inside a  meta data graph using the following schema:
+**Deviations** should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Deviations](deviationGraph.svg)
 
-**Value Omissions** should be represented inside a  meta data graph using the following schema:
+**Value Omissions** should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Value Omissions](valueOmissionGraph.svg)
 
-**Resource Omissions** should be represented inside a  meta data graph using the following schema:
+**Resource Omissions** should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Resource Omissions](resourceOmissionGraph.svg)
 
-**Quality Measurements** should be represented inside a  meta data graph using the following schema:
+**Quality Measurements** should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Quality Measurements](qualityMeasurementGraph.svg)
 
-Custom **issues** should be represented inside a  meta data graph using the following schema:
+Custom **issues** should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Issues](issueGraph.svg)
 
-**Correspondences** and **incorrespondences** should be represented inside a  meta data graph using the following schema:
+**Correspondences** and **incorrespondences** should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Correspondences](correspondenceGraph.svg)
 
@@ -91,8 +91,8 @@ The reuse of `skos:exactMatch` was rejected due to the following reasons:
 * It should only be used to link concepts from different datasets (see [SKOS Reference](https://www.w3.org/TR/skos-reference/#L4160)).
 
 The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reasons:
-* It is focused on the representation of alignments of exactly two datasets represented by exactly one file source.
+* It is focused on the representation of alignments of exactly two datasets, each represented by exactly one file source.
 
 # Acknowledgements
 
-Thanks to [Alsayed Algergawy](https://orcid.org/0000-0002-8550-4720) and [Sheeba Samuel](https://orcid.org/0000-0002-7981-8504) for feedback on earlier drafts of the ABECTO vocabulary and suggestions of other vocabulary to reuse .
+Thanks to [Alsayed Algergawy](https://orcid.org/0000-0002-8550-4720) and [Sheeba Samuel](https://orcid.org/0000-0002-7981-8504) for feedback on earlier drafts of the ABECTO vocabulary and suggestions of other vocabulary to reuse.
