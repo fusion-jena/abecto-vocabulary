@@ -68,25 +68,31 @@ av:QualityAnnotationBody a rdfs:Class ;
 av:Deviation a rdfs:Class ;
     rdfs:subClassOf av:QualityAnnotationBody ;
     rdfs:label "deviation"@en ;
-    rdfs:comment "A deviation is the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes a mismatch of the value (av:affectedValue) of a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) to the corresponding value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
+    rdfs:comment "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes a mismatch of the value (av:affectedValue) of a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) to the corresponding value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
+av:WrongValue a rdfs:Class ;
+    rdfs:subClassOf av:QualityAnnotationBody ;
+    rdfs:label "wrong value"@en ;
+    rdfs:comment "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the incorrectness of a value (av:affectedValue) of a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:ValueOmission a rdfs:Class ;
     rdfs:subClassOf av:QualityAnnotationBody ;
     rdfs:label "value omission"@en ;
-    rdfs:comment "A value omission is the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the absent of a certain value for a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) in comparison to a value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
+    rdfs:comment "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the absent of a certain value for a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) in comparison to a value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:ResourceOmission a rdfs:Class ;
     rdfs:subClassOf av:QualityAnnotationBody ;
     rdfs:label "resource omission"@en ;
-    rdfs:comment "A resource omission is the body (oa:hasBody) of a dqv:QualityAnnotation on a dataset (oa:hasTarget). It denotes the absent of a corresponding resource from a specified aspect (av:affectedAspect) in comparison to a resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
+    rdfs:comment "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a dataset (oa:hasTarget). It denotes the absent of a corresponding resource from a specified aspect (av:affectedAspect) in comparison to a resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:Issue a rdfs:Class ;
     rdfs:subClassOf av:QualityAnnotationBody ;
     rdfs:label "issue"@en ;
-    rdfs:comment "An issue is the body (oa:hasBody) of a dqv:QualityAnnotation on a resource or a dataset (oa:hasTarget). It describes an issue of a certain type (av:issueType) with a description (rdfs:comment). An issue might affect a certain aspect (av:Aspect), a certain aspect variable (av:affectedVariableName), or a certain aspect variable value (av:affectedValue)."@en ;
+    rdfs:comment "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource or a dataset (oa:hasTarget). It describes an issue of a certain type (av:issueType) with a description (rdfs:comment). An issue might affect a certain aspect (av:Aspect), a certain aspect variable (av:affectedVariableName), or a certain aspect variable value (av:affectedValue)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:MetaDataGraph a rdfs:Class ;

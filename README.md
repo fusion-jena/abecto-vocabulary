@@ -61,6 +61,10 @@ After execution, the main graph will further contain provenance information abou
 
 ![Visualization of the Vocabulary for Resource Omissions](resourceOmissionGraph.svg)
 
+**Wrong Values** should be represented inside a meta data graph using the following schema:
+
+![Visualization of the Vocabulary for Incorrect Values](wrongValuesGraph.svg)
+
 **Quality Measurements** should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Quality Measurements](qualityMeasurementGraph.svg)
