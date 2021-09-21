@@ -171,16 +171,16 @@ av:inputMetaDataGraph a owl:ObjectProperty ;
     rdfs:range av:MetaDataGraph ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
-
-av:JavaClass a rdfs:Datatype ;
-    rdfs:subClassOf xsd:string ;
-    rdfs:label "Java class"@en ;
-    rdfs:comment "The datatype of fully qualified Java class names."@en ;
+av:javaClass a owl:ObjectProperty ;
+    rdfs:label "processor class"@en ;
+    rdfs:comment "The associated Java class of a processor. The value is expected to be a resource represented by an IRI with the \"java\" scheme and the fully qualified name of the class as path, e.g. \"<java:java.util.Collection>"\". "@en ;
+    rdfs:domain av:Step ;
     rdfs:seeAlso "https://docs.oracle.com/javase/specs/jls/se16/html/jls-3.html#jls-3.8"^^xsd:anyURI ;
     rdfs:seeAlso "https://docs.oracle.com/javase/specs/jls/se16/html/jls-6.html#jls-6.5.3.2"^^xsd:anyURI ;
     rdfs:seeAlso "https://docs.oracle.com/javase/specs/jls/se16/html/jls-6.html#jls-6.7"^^xsd:anyURI ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
+
 av:Sparql11SelectQuery a rdfs:Datatype ;
     rdfs:subClassOf xsd:string ;
     rdfs:label "SPARQL select query"@en ;
@@ -236,13 +236,6 @@ av:issueType a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:comment "The described custom type of an issue."@en ;
     rdfs:domain av:Issue ;
     rdfs:range xsd:string ;
-    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
-    .
-av:processorClass a owl:DatatypeProperty , owl:FunctionalProperty ;
-    rdfs:label "processor class"@en ;
-    rdfs:comment "The Java class of the processor that executes a step."@en ;
-    rdfs:domain av:Step ;
-    rdfs:range av:JavaClass ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 
