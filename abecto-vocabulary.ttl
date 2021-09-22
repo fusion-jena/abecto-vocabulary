@@ -173,7 +173,7 @@ av:inputMetaDataGraph a owl:ObjectProperty ;
     .
 av:javaClass a owl:ObjectProperty ;
     rdfs:label "processor class"@en ;
-    rdfs:comment "The associated Java class of a processor. The value is expected to be a resource represented by an IRI with the \"java\" scheme and the fully qualified name of the class as path, e.g. \"<java:java.util.Collection>"\". "@en ;
+    rdfs:comment "The associated Java class of a processor. The value is expected to be a resource represented by an IRI with the \"java\" scheme and the fully qualified name of the class as path, e.g. \"<java:java.util.Collection>\"."@en ;
     rdfs:domain av:Step ;
     rdfs:seeAlso "https://docs.oracle.com/javase/specs/jls/se16/html/jls-3.html#jls-3.8"^^xsd:anyURI ;
     rdfs:seeAlso "https://docs.oracle.com/javase/specs/jls/se16/html/jls-6.html#jls-6.5.3.2"^^xsd:anyURI ;
