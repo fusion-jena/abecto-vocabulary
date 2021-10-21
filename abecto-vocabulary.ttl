@@ -239,10 +239,11 @@ av:issueType a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 
-av:markAndRecapture a dqv:Metric ;
+av:marCompletenessThomas08 a dqv:Metric ;
     rdfs:label "mark and recapture"@en ;
-    rdfs:comment "The ratio of the completeness of a dataset regarding a certain aspect estimation using mark and recapture techniques compared to another dataset."@en ;
+    rdfs:comment "The ratio of the completeness of a dataset compared to multiple other datasets regarding a certain aspect estimated using the mark and recapture method as defined in Thomas 2008."@en ;
     dqv:inDimension ldqd:completeness ;
+    rdfs:seeAlso <https://doi.org/10.1145/1390334.1390531> ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:relativeCoverage a dqv:Metric ;
