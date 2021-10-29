@@ -27,6 +27,12 @@
     owl:versionIRI <http://w3id.org/abecto-vocabulary/0.1> ;
     .
 
+av:Plan a rdfs:Class ;
+    rdfs:subClassOf p-plan:Plan ;
+    rdfs:label "ABECTO plan"@en ;
+    rdfs:comment "An ABECTO execution plan."@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
 av:Step a rdfs:Class ;
     rdfs:subClassOf p-plan:Step ;
     rdfs:label "step"@en ;
