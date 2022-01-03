@@ -15,16 +15,27 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://w3id.org/abecto-vocabulary> a owl:Ontology ;
+    owl:imports <http://www.w3.org/ns/dcat> ;
+    owl:imports <http://www.w3.org/ns/dqv> ;
+    owl:imports <http://www.w3.org/2016/05/ldqd> ;
+    owl:imports <http://www.opmw.org/p-plan.owl> ;
+    vaem:rationale "using statement `owl:imports <http://www.opmw.org/p-plan.owl>` because statement `owl:imports <http://purl.org/net/p-plan>` does not work" ;
+    owl:imports <http://www.w3.org/ns/prov> ;
+    owl:imports <http://www.w3.org/2004/03/trix/rdfg-1/> ;
     vann:preferredNamespaceUri "http://w3id.org/abecto-vocabulary#";
     vann:preferredNamespacePrefix "av";
     dcterms:title "ABECTO Vocabulary"@en;
     dcterms:description "The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the ABox Evaluation and Comparison Tool for Ontologies (ABECTO)."@en ;
-    dcterms:creator "Jan Martin Keil", [a foaf:Person; foaf:name "Jan Martin Keil"; foaf:mbox <mailto:jan-martin.keil@uni-jena.de>; owl:sameAs <http://orcid.org/0000-0002-7733-0193>] ;
+    dcterms:creator "Jan Martin Keil", <https://orcid.org/0000-0002-7733-0193> ;
     vaem:rationale "statement `dcterms:creator \"Jan Martin Keil\"` is a hotfix for https://github.com/dgarijo/Widoco/issues/285" ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:created "2021-07-23"^^xsd:date ;
     owl:versionInfo "0.1" ;
     owl:versionIRI <http://w3id.org/abecto-vocabulary/0.1> ;
+    .
+
+<https://orcid.org/0000-0002-7733-0193> a prov:Person , foaf:Person ;
+    rdfs:label "Jan Martin Keil" ;
     .
 
 av:Plan a rdfs:Class ;
@@ -188,7 +199,6 @@ av:javaClass a owl:ObjectProperty ;
     .
 
 av:SparqlSelectQuery a rdfs:Datatype ;
-    rdfs:subClassOf xsd:string ;
     rdfs:label "SPARQL select query"@en ;
     rdfs:comment "The datatype of SPARQL select queries."@en ;
     rdfs:seeAlso "https://www.w3.org/TR/sparql11-query/"^^xsd:anyURI ;
