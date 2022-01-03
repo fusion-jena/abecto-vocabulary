@@ -171,6 +171,7 @@ av:correspondsToResource a owl:ObjectProperty, owl:SymmetricProperty, owl:Transi
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:correspondsNotToResource a owl:ObjectProperty, owl:SymmetricProperty ;
+    owl:propertyChainAxiom ( av:correspondsNotToResource av:correspondsToResource ) ;
     rdfs:label "corresponds not to resource"@en ;
     rdfs:comment "A resource that not corresponds to this resource."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
