@@ -187,10 +187,10 @@ av:javaClass a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 
-av:Sparql11SelectQuery a rdfs:Datatype ;
+av:SparqlSelectQuery a rdfs:Datatype ;
     rdfs:subClassOf xsd:string ;
     rdfs:label "SPARQL select query"@en ;
-    rdfs:comment "The datatype of SPARQL 1.1 select queries."@en ;
+    rdfs:comment "The datatype of SPARQL select queries."@en ;
     rdfs:seeAlso "https://www.w3.org/TR/sparql11-query/"^^xsd:anyURI ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
@@ -199,13 +199,20 @@ av:definingQuery a owl:DatatypeProperty ;
     rdfs:label "defining query"@en ;
     rdfs:comment "The query that defines the pattern of an aspect for a certain dataset."@en ;
     rdfs:domain av:AspectPattern ;
-    rdfs:range av:Sparql11SelectQuery ;
+    rdfs:range av:SparqlSelectQuery ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:key a owl:DatatypeProperty ;
     rdfs:label "key"@en ;
     rdfs:label "name"@en ;
     rdfs:comment "The key or name of a parameter."@en ;
+    rdfs:domain av:Parameter ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
+    .
+av:value a owl:DatatypeProperty ;
+    rdfs:label "value"@en ;
+    rdfs:comment "The value of a parameter."@en ;
     rdfs:domain av:Parameter ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
