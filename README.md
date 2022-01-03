@@ -2,6 +2,14 @@
 
 The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the [ABox Evaluation and Comparison Tool for Ontologies (ABECTO)](https://github.com/fusion-jena/abecto).
 
+## Terms
+
+* An **Aspect** denotes a group of facts from multiple datasets belonging to corresponding features or classes of resources.
+* An **(In-)Correspondence** is the relation between resources that (do not) represent the same thing.
+* A **Primary Data Graph** is a RDF graph that contains primary data of a dataset.
+* A **Meta Data Graph** is a RDF graph that contains meta data like correspondences or quality data.
+* **Quality Data** are meta data about the quality of a dataset.
+
 ## Scope of the Vocabulary
 
 The vocabulary is designed to cover the following competency questions.
@@ -90,13 +98,13 @@ The reuse of `owl:sameAs`, `owl:equivalentClass`, `owl:differentFrom`, `owl:disj
 * Different representations of equivalent concepts might be logically incompatible.
 * Different representations of resources for one aspect might be individuals in one dataset and classes in another dataset.
 
-The reuse of `skos:exactMatch` was rejected due to the following reasons:
+The reuse of `skos:exactMatch` was rejected due to the following reason:
 
 * It should only be used to link concepts from different datasets (see [SKOS Reference](https://www.w3.org/TR/skos-reference/#L4160)).
 
-The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reasons:
+The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reason:
 * It is focused on the representation of alignments of exactly two datasets, each represented by exactly one file source.
 
 # Acknowledgements
 
-Thanks to [Alsayed Algergawy](https://orcid.org/0000-0002-8550-4720) and [Sheeba Samuel](https://orcid.org/0000-0002-7981-8504) for feedback on earlier drafts of the ABECTO vocabulary and suggestions of other vocabulary to reuse.
+Thanks to [Alsayed Algergawy](https://orcid.org/0000-0002-8550-4720), [Sheeba Samuel](https://orcid.org/0000-0002-7981-8504), and the author's supervisor [Birgitta König-Ries](https://orcid.org/0000-0002-2382-9722) for feedback on earlier drafts of the ABECTO vocabulary and suggestions of other vocabulary to reuse. Thanks to the authors of [DCAT](http://www.w3.org/ns/dcat) (David Browning), [DQV](http://www.w3.org/ns/dqv) (Riccardo Albertonitoni, Antoine Isaac),  [LDQD](http://www.w3.org/2016/05/ldqd) (Amrapali Zaveri, Anisa Rula, Andrea Maurino, Ricardo Pietrobon, Jens Lehmann, Sören Auer),  [P-PLAN](http://purl.org/net/p-plan) (Daniel Garijo, Yolanda Gil),  [PROV](http://www.w3.org/ns/prov) (Timothy Lebo, Satya Sahoo, Deborah McGuinness), and  [RDFG](http://www.w3.org/2004/03/trix/rdfg-1/) (Jeremy J. Carroll, Christian Bizer, Pat Hayes, Patrick Stickler) for providing these vocabularies for reuse.

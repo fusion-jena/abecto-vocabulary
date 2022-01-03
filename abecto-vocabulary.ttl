@@ -63,7 +63,7 @@ av:Parameter a rdfs:Class ;
     .
 av:Aspect a rdfs:Class ;
     rdfs:label "aspect"@en ;
-    rdfs:comment "An aspect denotes groups of facts from multiple datasets belonging to corresponding features or classes of resources."@en ;
+    rdfs:comment "An aspect denotes a group of facts from multiple datasets belonging to corresponding features or classes of resources."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:AspectPattern a rdfs:Class ;
