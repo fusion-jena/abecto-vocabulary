@@ -47,7 +47,7 @@ av:Plan a rdfs:Class ;
 av:Step a rdfs:Class ;
     rdfs:subClassOf p-plan:Step ;
     rdfs:label "step"@en ;
-    rdfs:comment "A single step in an ABECTO execution plan defined by the processor class, preceding steps (p-plan:isPrecededBy), parameters (av:hasParameter), and input models (av:inputMetaDataGraph)."@en ;
+    rdfs:comment "A single step in an ABECTO execution plan defined by the processor class, preceding steps (p-plan:isPrecededBy), parameters (av:hasParameter), and predefined meta data (av:predefinedMetaDataGraph)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
 av:StepExecution a rdfs:Class ;
@@ -181,9 +181,9 @@ av:relevantResource a owl:ObjectProperty ;
     rdfs:domain av:Aspect ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
     .
-av:inputMetaDataGraph a owl:ObjectProperty ;
-    rdfs:label "input meta data graph"@en ;
-    rdfs:comment "A meta data graph that will be taken into account during the execution of a step without being the  execution result of a preceding step."@en ;
+av:predefinedMetaDataGraph a owl:ObjectProperty ;
+    rdfs:label "predefined meta data graph"@en ;
+    rdfs:comment "A predefined meta data graph that will be taken into account during the execution of a step without being the execution result of a preceding step."@en ;
     rdfs:domain av:Step ;
     rdfs:range av:MetaDataGraph ;
     rdfs:isDefinedBy <http://w3id.org/abecto-vocabulary> ;
