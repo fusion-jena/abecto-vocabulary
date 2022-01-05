@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>ABECTO Vocabulary</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://w3id.org/abecto/vocabulary#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://w3id.org/abecto/vocabulary#","name":"ABECTO Vocabulary", "headline":"The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the ABox Evaluation and Comparison Tool for Ontologies (ABECTO).", "datePublished":"2022-01-05", "version":"0.1", "license":"http://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Jan Martin Keil"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>ABECTO Vocabulary</h1>
+<h2>Release  2022-01-05</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="http://w3id.org/abecto/vocabulary/0.1">http://w3id.org/abecto/vocabulary/0.1</a></dd>
+<dt>Revision:</dt>
+<dd>0.1</dd>
+<dt>Authors:</dt>
+<dd>Jan Martin Keil</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/4.0/-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Jan Martin Keil. ABECTO Vocabulary. Revision: 0.1. Retrieved from: http://w3id.org/abecto/vocabulary/0.1</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the ABox Evaluation and Comparison Tool for Ontologies (ABECTO).</span>
+</div>
+<div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">ABECTO Vocabulary: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#Plan" title="http://w3id.org/abecto/vocabulary#Plan">ABECTO plan</a>
+   </li>
+   <li>
+      <a href="#Aspect" title="http://w3id.org/abecto/vocabulary#Aspect">aspect</a>
+   </li>
+   <li>
+      <a href="#AspectPattern" title="http://w3id.org/abecto/vocabulary#AspectPattern">aspect pattern</a>
+   </li>
+   <li>
+      <a href="#Deviation" title="http://w3id.org/abecto/vocabulary#Deviation">deviation</a>
+   </li>
+   <li>
+      <a href="#Issue" title="http://w3id.org/abecto/vocabulary#Issue">issue</a>
+   </li>
+   <li>
+      <a href="#MetaDataGraph" title="http://w3id.org/abecto/vocabulary#MetaDataGraph">meta data graph</a>
+   </li>
+   <li>
+      <a href="#Parameter" title="http://w3id.org/abecto/vocabulary#Parameter">parameter</a>
+   </li>
+   <li>
+      <a href="#PrimaryDataGraph"
+         title="http://w3id.org/abecto/vocabulary#PrimaryDataGraph">primary data graph</a>
+   </li>
+   <li>
+      <a href="#QualityAnnotationBody"
+         title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+   </li>
+   <li>
+      <a href="#QualityMeasurement"
+         title="http://w3id.org/abecto/vocabulary#QualityMeasurement">quality measurement</a>
+   </li>
+   <li>
+      <a href="#ResourceOmission"
+         title="http://w3id.org/abecto/vocabulary#ResourceOmission">resource omission</a>
+   </li>
+   <li>
+      <a href="#Step" title="http://w3id.org/abecto/vocabulary#Step">step</a>
+   </li>
+   <li>
+      <a href="#StepExecution" title="http://w3id.org/abecto/vocabulary#StepExecution">step execution</a>
+   </li>
+   <li>
+      <a href="#ValueOmission" title="http://w3id.org/abecto/vocabulary#ValueOmission">value omission</a>
+   </li>
+   <li>
+      <a href="#WrongValue" title="http://w3id.org/abecto/vocabulary#WrongValue">wrong value</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#affectedAspect" title="http://w3id.org/abecto/vocabulary#affectedAspect">affected aspect</a>
+   </li>
+   <li>
+      <a href="#associatedDataset"
+         title="http://w3id.org/abecto/vocabulary#associatedDataset">associated dataset</a>
+   </li>
+   <li>
+      <a href="#comparedToDataset"
+         title="http://w3id.org/abecto/vocabulary#comparedToDataset">compared to dataset</a>
+   </li>
+   <li>
+      <a href="#comparedToResource"
+         title="http://w3id.org/abecto/vocabulary#comparedToResource">compared to resource</a>
+   </li>
+   <li>
+      <a href="#correspondsNotToResource"
+         title="http://w3id.org/abecto/vocabulary#correspondsNotToResource">corresponds not to resource</a>
+   </li>
+   <li>
+      <a href="#correspondsToResource"
+         title="http://w3id.org/abecto/vocabulary#correspondsToResource">corresponds to resource</a>
+   </li>
+   <li>
+      <a href="#hasParameter" title="http://w3id.org/abecto/vocabulary#hasParameter">has parameter</a>
+   </li>
+   <li>
+      <a href="#ofAspect" title="http://w3id.org/abecto/vocabulary#ofAspect">of aspect</a>
+   </li>
+   <li>
+      <a href="#predefinedMetaDataGraph"
+         title="http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph">predefined meta data graph</a>
+   </li>
+   <li>
+      <a href="#javaClass" title="http://w3id.org/abecto/vocabulary#javaClass">processor class</a>
+   </li>
+   <li>
+      <a href="#relevantResource"
+         title="http://w3id.org/abecto/vocabulary#relevantResource">relevant resource</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#affectedValue" title="http://w3id.org/abecto/vocabulary#affectedValue">affected value</a>
+   </li>
+   <li>
+      <a href="#affectedVariableName"
+         title="http://w3id.org/abecto/vocabulary#affectedVariableName">affected variable name</a>
+   </li>
+   <li>
+      <a href="#comparedToValue"
+         title="http://w3id.org/abecto/vocabulary#comparedToValue">compared to value</a>
+   </li>
+   <li>
+      <a href="#definingQuery" title="http://w3id.org/abecto/vocabulary#definingQuery">defining query</a>
+   </li>
+   <li>
+      <a href="#issueType" title="http://w3id.org/abecto/vocabulary#issueType">issue type</a>
+   </li>
+   <li>
+      <a href="#key" title="http://w3id.org/abecto/vocabulary#key">key</a>
+   </li>
+   <li>
+      <a href="#keyVariableName"
+         title="http://w3id.org/abecto/vocabulary#keyVariableName">key variable name</a>
+   </li>
+   <li>
+      <a href="#value" title="http://w3id.org/abecto/vocabulary#value">value</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#absoluteCoverage"
+         title="http://w3id.org/abecto/vocabulary#absoluteCoverage">absolute coverage</a>
+   </li>
+   <li>
+      <a href="#count" title="http://w3id.org/abecto/vocabulary#count">count</a>
+   </li>
+   <li>
+      <a href="#marCompletenessThomas08"
+         title="http://w3id.org/abecto/vocabulary#marCompletenessThomas08">mark and recapture</a>
+   </li>
+   <li>
+      <a href="#relativeCoverage"
+         title="http://w3id.org/abecto/vocabulary#relativeCoverage">relative coverage</a>
+   </li>
+</ul>
+</div>
+  
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for ABECTO Vocabulary classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by ABECTO Vocabulary.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Plan" title="http://w3id.org/abecto/vocabulary#Plan">ABECTO plan</a>
+      </li>
+      <li>
+         <a href="#Aspect" title="http://w3id.org/abecto/vocabulary#Aspect">aspect</a>
+      </li>
+      <li>
+         <a href="#AspectPattern" title="http://w3id.org/abecto/vocabulary#AspectPattern">aspect pattern</a>
+      </li>
+      <li>
+         <a href="#Deviation" title="http://w3id.org/abecto/vocabulary#Deviation">deviation</a>
+      </li>
+      <li>
+         <a href="#Issue" title="http://w3id.org/abecto/vocabulary#Issue">issue</a>
+      </li>
+      <li>
+         <a href="#MetaDataGraph" title="http://w3id.org/abecto/vocabulary#MetaDataGraph">meta data graph</a>
+      </li>
+      <li>
+         <a href="#Parameter" title="http://w3id.org/abecto/vocabulary#Parameter">parameter</a>
+      </li>
+      <li>
+         <a href="#PrimaryDataGraph"
+            title="http://w3id.org/abecto/vocabulary#PrimaryDataGraph">primary data graph</a>
+      </li>
+      <li>
+         <a href="#QualityAnnotationBody"
+            title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+      </li>
+      <li>
+         <a href="#QualityMeasurement"
+            title="http://w3id.org/abecto/vocabulary#QualityMeasurement">quality measurement</a>
+      </li>
+      <li>
+         <a href="#ResourceOmission"
+            title="http://w3id.org/abecto/vocabulary#ResourceOmission">resource omission</a>
+      </li>
+      <li>
+         <a href="#Step" title="http://w3id.org/abecto/vocabulary#Step">step</a>
+      </li>
+      <li>
+         <a href="#StepExecution" title="http://w3id.org/abecto/vocabulary#StepExecution">step execution</a>
+      </li>
+      <li>
+         <a href="#ValueOmission" title="http://w3id.org/abecto/vocabulary#ValueOmission">value omission</a>
+      </li>
+      <li>
+         <a href="#WrongValue" title="http://w3id.org/abecto/vocabulary#WrongValue">wrong value</a>
+      </li>
+   </ul>
+   <div class="entity" id="Plan">
+      <h3>ABECTO plan<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#Plan</p>
+      <div class="comment">
+         <span class="markdown">An ABECTO execution plan.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://purl.org/net/p-plan#Plan"
+               target="_blank"
+               title="http://purl.org/net/p-plan#Plan">plan</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Aspect">
+      <h3>aspect<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#Aspect</p>
+      <div class="comment">
+         <span class="markdown">An aspect denotes a group of facts from multiple datasets belonging to corresponding features or classes of resources.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#keyVariableName"
+               title="http://w3id.org/abecto/vocabulary#keyVariableName">key variable name</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#relevantResource"
+               title="http://w3id.org/abecto/vocabulary#relevantResource">relevant resource</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#affectedAspect" title="http://w3id.org/abecto/vocabulary#affectedAspect">affected aspect</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#ofAspect" title="http://w3id.org/abecto/vocabulary#ofAspect">of aspect</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AspectPattern">
+      <h3>aspect pattern<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#AspectPattern</p>
+      <div class="comment">
+         <span class="markdown">An aspect pattern determines the facts from a single dataset (av:associatedDataset) belonging to a specific aspect (av:ofAspect) using a SPARQL select query (av:definingQuery).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#definingQuery" title="http://w3id.org/abecto/vocabulary#definingQuery">defining query</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#ofAspect" title="http://w3id.org/abecto/vocabulary#ofAspect">of aspect</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Deviation">
+      <h3>deviation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#Deviation</p>
+      <div class="comment">
+         <span class="markdown">An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes a mismatch of the value (av:affectedValue) of a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) to the corresponding value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QualityAnnotationBody"
+               title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Issue">
+      <h3>issue<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#Issue</p>
+      <div class="comment">
+         <span class="markdown">An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource or a dataset (oa:hasTarget). It describes an issue of a certain type (av:issueType) with a description (rdfs:comment). An issue might affect a certain aspect (av:Aspect), a certain aspect variable (av:affectedVariableName), or a certain aspect variable value (av:affectedValue).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QualityAnnotationBody"
+               title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#issueType" title="http://w3id.org/abecto/vocabulary#issueType">issue type</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MetaDataGraph">
+      <h3>meta data graph<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#MetaDataGraph</p>
+      <div class="comment">
+         <span class="markdown">A meta data graph is a RDF graph that contains meta data of a dataset (dqv:computedOn).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/prov#Entity"
+               target="_blank"
+               title="http://www.w3.org/ns/prov#Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://www.w3.org/2004/03/trix/rdfg-1/Graph"
+               target="_blank"
+               title="http://www.w3.org/2004/03/trix/rdfg-1/Graph">graph</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://www.w3.org/ns/dqv#QualityMetadata"
+               target="_blank"
+               title="http://www.w3.org/ns/dqv#QualityMetadata">quality metadata</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#predefinedMetaDataGraph"
+               title="http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph">predefined meta data graph</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Parameter">
+      <h3>parameter<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#Parameter</p>
+      <div class="comment">
+         <span class="markdown">A generic parameter defined by a key String (av:key) and a value literal (rdf:value).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#key" title="http://w3id.org/abecto/vocabulary#key">key</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#value" title="http://w3id.org/abecto/vocabulary#value">value</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasParameter" title="http://w3id.org/abecto/vocabulary#hasParameter">has parameter</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PrimaryDataGraph">
+      <h3>primary data graph<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#PrimaryDataGraph</p>
+      <div class="comment">
+         <span class="markdown">A primary data graph is a RDF graph that contains primary data of a dataset (av:associatedDataset).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/prov#Entity"
+               target="_blank"
+               title="http://www.w3.org/ns/prov#Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://www.w3.org/2004/03/trix/rdfg-1/Graph"
+               target="_blank"
+               title="http://www.w3.org/2004/03/trix/rdfg-1/Graph">graph</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QualityAnnotationBody">
+      <h3>quality annotation body<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#QualityAnnotationBody</p>
+      <div class="comment">
+         <span class="markdown">A quality annotation body is the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). This class serves as super class of different types of annotation bodies and is not intended for direct use.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Deviation" title="http://w3id.org/abecto/vocabulary#Deviation">deviation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Issue" title="http://w3id.org/abecto/vocabulary#Issue">issue</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ResourceOmission"
+               title="http://w3id.org/abecto/vocabulary#ResourceOmission">resource omission</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ValueOmission" title="http://w3id.org/abecto/vocabulary#ValueOmission">value omission</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#WrongValue" title="http://w3id.org/abecto/vocabulary#WrongValue">wrong value</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#affectedValue" title="http://w3id.org/abecto/vocabulary#affectedValue">affected value</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#affectedVariableName"
+               title="http://w3id.org/abecto/vocabulary#affectedVariableName">affected variable name</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#comparedToResource"
+               title="http://w3id.org/abecto/vocabulary#comparedToResource">compared to resource</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#comparedToValue"
+               title="http://w3id.org/abecto/vocabulary#comparedToValue">compared to value</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QualityMeasurement">
+      <h3>quality measurement<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#QualityMeasurement</p>
+      <div class="comment">
+         <span class="markdown">A quality measurement represents the result value (dqv:value) of an evaluation of a given dataset (dqv:computedOn) against a specific quality metric (dqv:isMeasurementOf).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dqv#QualityMeasurement"
+               target="_blank"
+               title="http://www.w3.org/ns/dqv#QualityMeasurement">quality measurement</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ResourceOmission">
+      <h3>resource omission<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#ResourceOmission</p>
+      <div class="comment">
+         <span class="markdown">An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a dataset (oa:hasTarget). It denotes the absent of a corresponding resource from a specified aspect (av:affectedAspect) in comparison to a resource (av:comparedToResource) from a specified dataset (av:comparedToDataset).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QualityAnnotationBody"
+               title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Step">
+      <h3>step<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#Step</p>
+      <div class="comment">
+         <span class="markdown">A single step in an ABECTO execution plan defined by the processor class, preceding steps (p-plan:isPrecededBy), parameters (av:hasParameter), and predefined meta data (av:predefinedMetaDataGraph).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://purl.org/net/p-plan#Step"
+               target="_blank"
+               title="http://purl.org/net/p-plan#Step">step</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#predefinedMetaDataGraph"
+               title="http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph">predefined meta data graph</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#javaClass" title="http://w3id.org/abecto/vocabulary#javaClass">processor class</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="StepExecution">
+      <h3>step execution<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#StepExecution</p>
+      <div class="comment">
+         <span class="markdown">A step execution is an activity that executes a single step of a plan. It is determined by the correspnding step (p-plan:corresondsToStep), start and end date time (prov:startedAtTime, prov:endedAtTime), and the used primary and meta data graphs (prov:used).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://purl.org/net/p-plan#Activity"
+               target="_blank"
+               title="http://purl.org/net/p-plan#Activity">activity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ValueOmission">
+      <h3>value omission<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#ValueOmission</p>
+      <div class="comment">
+         <span class="markdown">An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the absent of a certain value for a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) in comparison to a value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QualityAnnotationBody"
+               title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WrongValue">
+      <h3>wrong value<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#WrongValue</p>
+      <div class="comment">
+         <span class="markdown">An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the incorrectness of a value (av:affectedValue) of a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QualityAnnotationBody"
+               title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#affectedAspect" title="http://w3id.org/abecto/vocabulary#affectedAspect">affected aspect</a>
+      </li>
+      <li>
+         <a href="#associatedDataset"
+            title="http://w3id.org/abecto/vocabulary#associatedDataset">associated dataset</a>
+      </li>
+      <li>
+         <a href="#comparedToDataset"
+            title="http://w3id.org/abecto/vocabulary#comparedToDataset">compared to dataset</a>
+      </li>
+      <li>
+         <a href="#comparedToResource"
+            title="http://w3id.org/abecto/vocabulary#comparedToResource">compared to resource</a>
+      </li>
+      <li>
+         <a href="#correspondsNotToResource"
+            title="http://w3id.org/abecto/vocabulary#correspondsNotToResource">corresponds not to resource</a>
+      </li>
+      <li>
+         <a href="#correspondsToResource"
+            title="http://w3id.org/abecto/vocabulary#correspondsToResource">corresponds to resource</a>
+      </li>
+      <li>
+         <a href="#hasParameter" title="http://w3id.org/abecto/vocabulary#hasParameter">has parameter</a>
+      </li>
+      <li>
+         <a href="#ofAspect" title="http://w3id.org/abecto/vocabulary#ofAspect">of aspect</a>
+      </li>
+      <li>
+         <a href="#predefinedMetaDataGraph"
+            title="http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph">predefined meta data graph</a>
+      </li>
+      <li>
+         <a href="#javaClass" title="http://w3id.org/abecto/vocabulary#javaClass">processor class</a>
+      </li>
+      <li>
+         <a href="#relevantResource"
+            title="http://w3id.org/abecto/vocabulary#relevantResource">relevant resource</a>
+      </li>
+   </ul>
+   <div class="entity" id="affectedAspect">
+      <h3>affected aspect<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#affectedAspect</p>
+      <div class="comment">
+         <span class="markdown">The aspect that is concerned by some meta data, such as deviations, value omissions and resource omissions, quality measurements or issues.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QualityAnnotationBody"
+                  title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#QualityMeasurement"
+                  title="http://w3id.org/abecto/vocabulary#QualityMeasurement">quality measurement</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Aspect" title="http://w3id.org/abecto/vocabulary#Aspect">aspect</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="associatedDataset">
+      <h3>associated dataset<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#associatedDataset</p>
+      <div class="comment">
+         <span class="markdown">The dataset to that a resource belongs, such as primary or meta data graphs, aspect patterns or steps.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/dcat#Dataset"
+                  target="_blank"
+                  title="http://www.w3.org/ns/dcat#Dataset">dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="comparedToDataset">
+      <h3>compared to dataset<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#comparedToDataset</p>
+      <div class="comment">
+         <span class="markdown">The dataset in comparison to that were derived some meta data, such as deviations, value omissions, resource omissions, or quality measurements.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QualityAnnotationBody"
+                  title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#QualityMeasurement"
+                  title="http://w3id.org/abecto/vocabulary#QualityMeasurement">quality measurement</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/dcat#Dataset"
+                  target="_blank"
+                  title="http://www.w3.org/ns/dcat#Dataset">dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="comparedToResource">
+      <h3>compared to resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#comparedToResource</p>
+      <div class="comment">
+         <span class="markdown">The resource in comparison to that were derived some meta data, such as deviations, value omissions or resource omissions.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QualityAnnotationBody"
+                  title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="correspondsNotToResource">
+      <h3>corresponds not to resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#correspondsNotToResource</p>
+      <div class="comment">
+         <span class="markdown">A resource that not corresponds to this resource.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> symmetric</p>
+         <dl>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#correspondsNotToResource"
+                  title="http://w3id.org/abecto/vocabulary#correspondsNotToResource">corresponds not to resource</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#correspondsToResource"
+                  title="http://w3id.org/abecto/vocabulary#correspondsToResource">corresponds to resource</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="correspondsToResource">
+      <h3>corresponds to resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#correspondsToResource</p>
+      <div class="comment">
+         <span class="markdown">A resource that corresponds to this resource.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="hasParameter">
+      <h3>has parameter<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#hasParameter</p>
+      <div class="comment">
+         <span class="markdown">A parameter that was, is, or will be involved in an execution.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Parameter" title="http://w3id.org/abecto/vocabulary#Parameter">parameter</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="ofAspect">
+      <h3>of aspect<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#ofAspect</p>
+      <div class="comment">
+         <span class="markdown">The aspect an aspect pattern belongs to.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AspectPattern" title="http://w3id.org/abecto/vocabulary#AspectPattern">aspect pattern</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Aspect" title="http://w3id.org/abecto/vocabulary#Aspect">aspect</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="predefinedMetaDataGraph">
+      <h3>predefined meta data graph<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph</p>
+      <div class="comment">
+         <span class="markdown">A predefined meta data graph that will be taken into account during the execution of a step without being the execution result of a preceding step.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Step" title="http://w3id.org/abecto/vocabulary#Step">step</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MetaDataGraph" title="http://w3id.org/abecto/vocabulary#MetaDataGraph">meta data graph</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="javaClass">
+      <h3>processor class<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#javaClass</p>
+      <div class="comment">
+         <span class="markdown">The associated Java class of a processor. The value is expected to be a resource represented by an IRI with the "java" scheme and the fully qualified name of the class as path, e.g. "&lt;java:java.util.Collection&gt;".</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Step" title="http://w3id.org/abecto/vocabulary#Step">step</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="relevantResource">
+      <h3>relevant resource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#relevantResource</p>
+      <div class="comment">
+         <span class="markdown">A resource that is relevant for an aspekt.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Aspect" title="http://w3id.org/abecto/vocabulary#Aspect">aspect</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#affectedValue" title="http://w3id.org/abecto/vocabulary#affectedValue">affected value</a>
+      </li>
+      <li>
+         <a href="#affectedVariableName"
+            title="http://w3id.org/abecto/vocabulary#affectedVariableName">affected variable name</a>
+      </li>
+      <li>
+         <a href="#comparedToValue"
+            title="http://w3id.org/abecto/vocabulary#comparedToValue">compared to value</a>
+      </li>
+      <li>
+         <a href="#definingQuery" title="http://w3id.org/abecto/vocabulary#definingQuery">defining query</a>
+      </li>
+      <li>
+         <a href="#issueType" title="http://w3id.org/abecto/vocabulary#issueType">issue type</a>
+      </li>
+      <li>
+         <a href="#key" title="http://w3id.org/abecto/vocabulary#key">key</a>
+      </li>
+      <li>
+         <a href="#keyVariableName"
+            title="http://w3id.org/abecto/vocabulary#keyVariableName">key variable name</a>
+      </li>
+      <li>
+         <a href="#value" title="http://w3id.org/abecto/vocabulary#value">value</a>
+      </li>
+   </ul>
+   <div class="entity" id="affectedValue">
+      <h3>affected value<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#affectedValue</p>
+      <div class="comment">
+         <span class="markdown">The variable value of resource of an aspect that is concerned by some meta data, such as deviations, or issues.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QualityAnnotationBody"
+                  title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="affectedVariableName">
+      <h3>affected variable name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#affectedVariableName</p>
+      <div class="comment">
+         <span class="markdown">The variable of an aspect that is concerned by some meta data, such as deviations, value omissions, quality measurements, or issues.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QualityAnnotationBody"
+                  title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="comparedToValue">
+      <h3>compared to value<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#comparedToValue</p>
+      <div class="comment">
+         <span class="markdown">The value in comparison to that were derived some meta data, such as deviations, or value omissions.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QualityAnnotationBody"
+                  title="http://w3id.org/abecto/vocabulary#QualityAnnotationBody">quality annotation body</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="definingQuery">
+      <h3>defining query<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#definingQuery</p>
+      <div class="comment">
+         <span class="markdown">The query that defines the pattern of an aspect for a certain dataset.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AspectPattern" title="http://w3id.org/abecto/vocabulary#AspectPattern">aspect pattern</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://w3id.org/abecto/vocabulary#SparqlSelectQuery"
+                  target="_blank"
+                  title="http://w3id.org/abecto/vocabulary#SparqlSelectQuery">SPARQL select query</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="issueType">
+      <h3>issue type<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#issueType</p>
+      <div class="comment">
+         <span class="markdown">The described custom type of an issue.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Issue" title="http://w3id.org/abecto/vocabulary#Issue">issue</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="key">
+      <h3>key<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#key</p>
+      <div class="comment">
+         <span class="markdown">The key or name of a parameter.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Parameter" title="http://w3id.org/abecto/vocabulary#Parameter">parameter</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="keyVariableName">
+      <h3>key variable name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#keyVariableName</p>
+      <div class="comment">
+         <span class="markdown">The name of a variable that serves as primary key for an aspect.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Aspect" title="http://w3id.org/abecto/vocabulary#Aspect">aspect</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="value">
+      <h3>value<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#value</p>
+      <div class="comment">
+         <span class="markdown">The value of a parameter.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Parameter" title="http://w3id.org/abecto/vocabulary#Parameter">parameter</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#absoluteCoverage"
+            title="http://w3id.org/abecto/vocabulary#absoluteCoverage">absolute coverage</a>
+      </li>
+      <li>
+         <a href="#count" title="http://w3id.org/abecto/vocabulary#count">count</a>
+      </li>
+      <li>
+         <a href="#marCompletenessThomas08"
+            title="http://w3id.org/abecto/vocabulary#marCompletenessThomas08">mark and recapture</a>
+      </li>
+      <li>
+         <a href="#relativeCoverage"
+            title="http://w3id.org/abecto/vocabulary#relativeCoverage">relative coverage</a>
+      </li>
+   </ul>
+   <div class="entity" id="absoluteCoverage">
+      <h3>absolute coverage<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#absoluteCoverage</p>
+      <div class="comment">
+         <span class="markdown">The number of resources of a certain aspect in another dataset for that the assessed dataset contains a corresponding resource.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dqv#Metric"
+               target="_blank"
+               title="http://www.w3.org/ns/dqv#Metric">metric</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="count">
+      <h3>count<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#count</p>
+      <div class="comment">
+         <span class="markdown">The number of resource of a certain aspect in a dataset.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dqv#Metric"
+               target="_blank"
+               title="http://www.w3.org/ns/dqv#Metric">metric</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="marCompletenessThomas08">
+      <h3>mark and recapture<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#marCompletenessThomas08</p>
+      <div class="comment">
+         <span class="markdown">The ratio of the completeness of a dataset compared to multiple other datasets regarding a certain aspect estimated using the mark and recapture method as defined in Thomas 2008.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dqv#Metric"
+               target="_blank"
+               title="http://www.w3.org/ns/dqv#Metric">metric</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="relativeCoverage">
+      <h3>relative coverage<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/abecto/vocabulary#relativeCoverage</p>
+      <div class="comment">
+         <span class="markdown">The ratio of resources of a certain aspect in another dataset for that the assessed dataset contains a corresponding resource.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/abecto/vocabulary">http://w3id.org/abecto/vocabulary</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/dqv#Metric"
+               target="_blank"
+               title="http://www.w3.org/ns/dqv#Metric">metric</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
