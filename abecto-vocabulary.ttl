@@ -242,7 +242,7 @@ av:affectedVariableName a owl:DatatypeProperty ;
     .
 av:affectedValue a owl:DatatypeProperty ;
     rdfs:label "affected value"@en ;
-    rdfs:comment "The variable value of resource of an aspect that is concerned by some meta data, such as deviations, or issues."@en ;
+    rdfs:comment "The variable value of a resource of an aspect that is concerned by some meta data, such as deviations or issues."@en ;
     rdfs:domain av:QualityAnnotationBody ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .

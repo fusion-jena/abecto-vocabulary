@@ -403,7 +403,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The variable value of resource of an aspect that is concerned by some meta data, such as deviations, or issues."
+    "@value" : "The variable value of a resource of an aspect that is concerned by some meta data, such as deviations or issues."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/abecto/vocabulary#QualityAnnotationBody"
