@@ -2,7 +2,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ldqd: <http://www.w3.org/2016/05/ldqd#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix p-plan: <http://purl.org/net/p-plan#> .
@@ -10,6 +9,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -26,11 +26,16 @@
     vann:preferredNamespacePrefix "av";
     dcterms:title "ABECTO Vocabulary"@en;
     dcterms:description "The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the ABox Evaluation and Comparison Tool for Ontologies (ABECTO)."@en ;
-    dcterms:creator [ foaf:name "Jan Martin Keil" ; rdfs:seeAlso <https://orcid.org/0000-0002-7733-0193> ] ;
-    dcterms:creator "Jan Martin Keil" ;
-    vaem:rationale "statement `dcterms:creator \"Jan Martin Keil\"` is a hotfix for https://github.com/dgarijo/Widoco/issues/285" ;
+    dcterms:creator [
+        schema:name "Jan Martin Keil" ;
+        schema:identifier <https://orcid.org/0000-0002-7733-0193> ;
+        schema:affiliation [
+            schema:name "Heinz Nixdorf Chair for Distributed Information Systems, Friedrich Schiller University Jena" ;
+            schema:url <https://www.fusion.uni-jena.de/> ;
+        ] ;
+    ] ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:created "2022-01-05"^^xsd:date ;
+    dcterms:created "2022-05-09"^^xsd:date ;
     owl:versionInfo "0.2.0" ;
     owl:versionIRI <http://w3id.org/abecto/vocabulary/0.2.0> ;
     owl:priorVersion <http://w3id.org/abecto/vocabulary/0.1> ;
