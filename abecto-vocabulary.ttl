@@ -31,8 +31,9 @@
     vaem:rationale "statement `dcterms:creator \"Jan Martin Keil\"` is a hotfix for https://github.com/dgarijo/Widoco/issues/285" ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:created "2022-01-05"^^xsd:date ;
-    owl:versionInfo "0.1" ;
-    owl:versionIRI <http://w3id.org/abecto/vocabulary/0.1> ;
+    owl:versionInfo "0.2.0" ;
+    owl:versionIRI <http://w3id.org/abecto/vocabulary/0.2.0> ;
+    owl:priorVersion <http://w3id.org/abecto/vocabulary/0.1> ;
     .
 
 av:Plan a rdfs:Class ;
@@ -50,7 +51,7 @@ av:Step a rdfs:Class ;
 av:StepExecution a rdfs:Class ;
     rdfs:subClassOf p-plan:Activity ;
     rdfs:label "step execution"@en ;
-    rdfs:comment "A step execution is an activity that executes a single step of a plan. It is determined by the correspnding step (p-plan:corresondsToStep), start and end date time (prov:startedAtTime, prov:endedAtTime), and the used primary and meta data graphs (prov:used)."@en ;
+    rdfs:comment "An activity that executes a single step of a plan. It is determined by the correspnding step (p-plan:corresondsToStep), start and end date time (prov:startedAtTime, prov:endedAtTime), and the used primary and meta data graphs (prov:used)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 av:Parameter a rdfs:Class ;
@@ -95,6 +96,11 @@ av:ValueOmission a rdfs:Class ;
     rdfs:subClassOf av:QualityAnnotationBody ;
     rdfs:label "value omission"@en ;
     rdfs:comment "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the absent of a certain value for a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) in comparison to a value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
+av:VariablePath a rdfs:Class ;
+    rdfs:label "variable path"@en ;
+    rdfs:comment "A connection between the key variable and another variable (av:variableName) of an aspect by a property path (av:propertyPath)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 av:ResourceOmission a rdfs:Class ;
@@ -196,10 +202,17 @@ av:javaClass a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 
-av:SparqlSelectQuery a rdfs:Datatype ;
+av:SparqlQuery a rdfs:Datatype ;
     rdfs:label "SPARQL select query"@en ;
-    rdfs:comment "The datatype of SPARQL select queries."@en ;
-    rdfs:seeAlso "https://www.w3.org/TR/sparql11-query/"^^xsd:anyURI ;
+    rdfs:comment "The datatype of SPARQL queries."@en ;
+    rdfs:seeAlso "http://www.w3.org/TR/sparql11-query#rQuery"^^xsd:anyURI ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
+
+av:SparqlPropertyPath a rdfs:Datatype ;
+    rdfs:label "SPARQL property path"@en ;
+    rdfs:comment "The datatype of SPARQL property paths."@en ;
+    rdfs:seeAlso "http://www.w3.org/TR/sparql11-query#rPath "^^xsd:anyURI ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 
@@ -207,7 +220,7 @@ av:definingQuery a owl:DatatypeProperty ;
     rdfs:label "defining query"@en ;
     rdfs:comment "The query that defines the pattern of an aspect for a certain dataset."@en ;
     rdfs:domain av:AspectPattern ;
-    rdfs:range av:SparqlSelectQuery ;
+    rdfs:range av:SparqlQuery ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 av:key a owl:DatatypeProperty ;
@@ -230,6 +243,20 @@ av:keyVariableName a owl:DatatypeProperty ;
     rdfs:comment "The name of a variable that serves as primary key for an aspect."@en ;
     rdfs:domain av:Aspect ;
     rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
+av:variableName a owl:DatatypeProperty ;
+    rdfs:label "variable name"@en ;
+    rdfs:comment "The name of a variable the key variable of an aspect is connected with via a certain property path (av:propertyPath)."@en ;
+    rdfs:domain av:VariablePath ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
+av:propertyPath a owl:DatatypeProperty ;
+    rdfs:label "variable name"@en ;
+    rdfs:comment "The property path that connects the key variable of an aspect to a certain variable (av:variableName)."@en ;
+    rdfs:domain av:VariablePath ;
+    rdfs:range av:SparqlPropertyPath ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 av:affectedVariableName a owl:DatatypeProperty ;

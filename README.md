@@ -30,6 +30,7 @@ The vocabulary is designed to cover the following competency questions.
 * Which are the aspects of interest?
 * What is the key variable of an aspect?
 * How is an aspect modeled in a specific dataset?
+* How is the key variable of an aspect connected to other variables in a specific dataset?
 
 ### Resource Correspondence
 
