@@ -48,7 +48,7 @@ The vocabulary is designed to cover the following competency questions.
 
 ## Model
 
-The vocabulary is intended to be used in set of graphs. The main graph contains a description of the execution plan for ABECTO and the aspects of interest for comparison. The execution results will be stored in several result graphs which might be associated to a dataset:
+The vocabulary is intended to be used in a set of graphs. The main graph contains a description of the execution plan for ABECTO and the aspects of interest for comparison. The execution results will be stored in several result graphs which might be associated to a dataset:
 
 * Primary Data Graphs for dataset import and transformation results. The content and used vocabulary is completely up to the dataset creators.
 
@@ -74,6 +74,17 @@ After execution, the main graph will further contain provenance information abou
 
 ![Visualization of the Vocabulary for Incorrect Values](wrongValuesGraph.svg)
 
+```turtle
+[ rdf:type      dqv:QualityAnnotation ;
+  oa:hasBody    [ rdf:type                 av:WrongValue ;
+                  av:affectedAspect        _:person ;
+                  av:affectedVariableName  "name" ;
+                  av:affectedValue         "Wiliam" ;
+                ] ;
+  oa:hasTarget  ex3:william ;
+] .
+```
+
 **Quality Measurements** should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Quality Measurements](qualityMeasurementGraph.svg)
@@ -96,6 +107,7 @@ ex1:people av:relevantResource ex2:anna, ex3:anne .
 ```
 
 The reuse of `owl:sameAs`, `owl:equivalentClass`, `owl:differentFrom`, `owl:disjointWith`, and `owl:AllDisjointClasses` was rejected due to the following reasons:
+
 * Different representations of equivalent concepts might be logically incompatible.
 * Different representations of resources for one aspect might be individuals in one dataset and classes in another dataset.
 
@@ -104,6 +116,7 @@ The reuse of `skos:exactMatch` was rejected due to the following reason:
 * It should only be used to link concepts from different datasets (see [SKOS Reference](https://www.w3.org/TR/skos-reference/#L4160)).
 
 The reuse of the [Alignment API format](https://moex.gitlabpages.inria.fr/alignapi/format.html) vocabulary and [EDOLA](http://ns.inria.org/edoal/1.0/) vocabulary was rejected due to the following reason:
+
 * It is focused on the representation of alignments of exactly two datasets, each represented by exactly one file source.
 
 # Acknowledgements
