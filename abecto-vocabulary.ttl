@@ -207,25 +207,11 @@ av:javaClass a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 
-av:SparqlQuery a rdfs:Datatype ;
-    rdfs:label "SPARQL select query"@en ;
-    rdfs:comment "The datatype of SPARQL queries."@en ;
-    rdfs:seeAlso "http://www.w3.org/TR/sparql11-query#rQuery"^^xsd:anyURI ;
-    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
-    .
-
-av:SparqlPropertyPath a rdfs:Datatype ;
-    rdfs:label "SPARQL property path"@en ;
-    rdfs:comment "The datatype of SPARQL property paths."@en ;
-    rdfs:seeAlso "http://www.w3.org/TR/sparql11-query#rPath "^^xsd:anyURI ;
-    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
-    .
-
 av:definingQuery a owl:DatatypeProperty ;
     rdfs:label "defining query"@en ;
     rdfs:comment "The query that defines the pattern of an aspect for a certain dataset."@en ;
     rdfs:domain av:AspectPattern ;
-    rdfs:range av:SparqlQuery ;
+    rdfs:range xsd:string ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 av:key a owl:DatatypeProperty ;
@@ -258,10 +244,10 @@ av:variableName a owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 av:propertyPath a owl:DatatypeProperty ;
-    rdfs:label "variable name"@en ;
+    rdfs:label "property path"@en ;
     rdfs:comment "The property path that connects the key variable of an aspect to a certain variable (av:variableName)."@en ;
     rdfs:domain av:VariablePath ;
-    rdfs:range av:SparqlPropertyPath ;
+    rdfs:range xsd:string ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 av:affectedVariableName a owl:DatatypeProperty ;
