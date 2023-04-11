@@ -57,7 +57,7 @@ av:Step a rdfs:Class ;
 av:StepExecution a rdfs:Class ;
     rdfs:subClassOf p-plan:Activity ;
     rdfs:label "step execution"@en ;
-    rdfs:comment "An activity that executes a single step of a plan. It is determined by the correspnding step (p-plan:corresondsToStep), start and end date time (prov:startedAtTime, prov:endedAtTime), and the used primary and meta data graphs (prov:used)."@en ;
+    rdfs:comment "An activity that executes a single step of a plan. It is determined by the corresponding step (p-plan:correspondsToStep), start and end date time (prov:startedAtTime, prov:endedAtTime), and the used primary and meta data graphs (prov:used)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
 av:Parameter a rdfs:Class ;
