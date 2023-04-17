@@ -185,11 +185,7 @@ av:correspondsNotToResource a owl:ObjectProperty, owl:SymmetricProperty ;
     rdfs:comment "A resource that not corresponds to this resource."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
-av:relevantResource a owl:ObjectProperty ;
-    rdfs:label "relevant resource"@en ;
-    rdfs:comment "A resource that is relevant for an aspekt."@en ;
-    rdfs:domain av:Aspect ;
-    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+av:relevantResource owl:deprecated "true"^^xsd:boolean ;
     .
 av:predefinedMetaDataGraph a owl:ObjectProperty ;
     rdfs:label "predefined meta data graph"@en ;
