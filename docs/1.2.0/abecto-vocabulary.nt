@@ -1,0 +1,272 @@
+_:n786abd39b7414d849b298f5008c0c98db6 <http://www.w3.org/2002/07/owl#unionOf> _:n786abd39b7414d849b298f5008c0c98db7 .
+<http://w3id.org/abecto/vocabulary> <http://www.linkedmodel.org/schema/vaem#rationale> "using statement `owl:imports <http://www.opmw.org/p-plan.owl>` because statement `owl:imports <http://purl.org/net/p-plan>` does not work" .
+<http://w3id.org/abecto/vocabulary#QualityAnnotationBody> <http://www.w3.org/2000/01/rdf-schema#label> "quality annotation body"@en .
+<http://w3id.org/abecto/vocabulary#marCompletenessThomas08> <http://www.w3.org/ns/dqv#inDimension> <http://www.w3.org/2016/05/ldqd#completeness> .
+<http://w3id.org/abecto/vocabulary#count> <http://www.w3.org/2000/01/rdf-schema#label> "count"@en .
+<http://w3id.org/abecto/vocabulary#comparedToResource> <http://www.w3.org/2000/01/rdf-schema#comment> "The resource in comparison to that were derived some meta data, such as deviations, value omissions or resource omissions."@en .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#versionInfo> "1.2.0" .
+<http://w3id.org/abecto/vocabulary#WrongValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#QualityAnnotationBody> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality annotation body is the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). This class serves as super class of different types of annotation bodies and is not intended for direct use."@en .
+<http://w3id.org/abecto/vocabulary#Issue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#Plan> <http://www.w3.org/2000/01/rdf-schema#label> "ABECTO plan"@en .
+<http://w3id.org/abecto/vocabulary#MetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Entity> .
+<http://w3id.org/abecto/vocabulary#Aspect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#propertyPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/abecto/vocabulary#comparedToResource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#correspondsToResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#issueType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://w3id.org/abecto/vocabulary#javaClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#Issue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#ofAspect> <http://www.w3.org/2000/01/rdf-schema#comment> "The aspect an aspect pattern belongs to."@en .
+<http://w3id.org/abecto/vocabulary#comparedToDataset> <http://www.w3.org/2000/01/rdf-schema#domain> _:n786abd39b7414d849b298f5008c0c98db6 .
+<http://w3id.org/abecto/vocabulary#propertyPath> <http://www.w3.org/2000/01/rdf-schema#comment> "The property path that connects the key variable of an aspect to a certain variable (av:variableName)."@en .
+<http://w3id.org/abecto/vocabulary#ofAspect> <http://www.w3.org/2000/01/rdf-schema#label> "of aspect"@en .
+<http://w3id.org/abecto/vocabulary#QualityAnnotationBody> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/abecto/vocabulary#MetaDataGraph> .
+<http://w3id.org/abecto/vocabulary#PrimaryDataGraph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/03/trix/rdfg-1/Graph> .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#label> "affected variable name"@en .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#versionIRI> <http://w3id.org/abecto/vocabulary/1.2.0> .
+<http://w3id.org/abecto/vocabulary#affectedAspect> <http://www.w3.org/2000/01/rdf-schema#comment> "The aspect that is concerned by some meta data, such as deviations, value omissions and resource omissions, quality measurements or issues."@en .
+<http://w3id.org/abecto/vocabulary#javaClass> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://docs.oracle.com/javase/specs/jls/se16/html/jls-6.html#jls-6.5.3.2"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://w3id.org/abecto/vocabulary#Deviation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#Step> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Step> .
+_:n786abd39b7414d849b298f5008c0c98db9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/abecto/vocabulary#correspondsNotToResource> .
+<http://w3id.org/abecto/vocabulary#variableName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#comparedToResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#key> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+_:n786abd39b7414d849b298f5008c0c98db7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n786abd39b7414d849b298f5008c0c98db8 .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/abecto/vocabulary#AspectPattern> .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/abecto/vocabulary#Issue> .
+<http://w3id.org/abecto/vocabulary#affectedAspect> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#marCompletenessThomas08> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#affectedValue> <http://www.w3.org/2000/01/rdf-schema#label> "affected value"@en .
+<http://w3id.org/abecto/vocabulary#Deviation> <http://www.w3.org/2000/01/rdf-schema#comment> "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes a mismatch of the value (av:affectedValue) of a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) to the corresponding value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en .
+<http://w3id.org/abecto/vocabulary#correspondsNotToResource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#StepExecution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#affectedValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#comment> "The variable of an aspect that is concerned by some meta data, such as deviations, value omissions, quality measurements, or issues."@en .
+<http://w3id.org/abecto/vocabulary#key> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#variableName> <http://www.w3.org/2000/01/rdf-schema#label> "variable name"@en .
+<http://w3id.org/abecto/vocabulary#key> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n786abd39b7414d849b298f5008c0c98db8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/abecto/vocabulary#relativeCoverage> <http://www.w3.org/2000/01/rdf-schema#label> "relative coverage"@en .
+<http://w3id.org/abecto/vocabulary#affectedAspect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#relevantResource> <http://www.w3.org/2002/07/owl#deprecated> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://w3id.org/abecto/vocabulary#comparedToValue> <http://www.w3.org/2000/01/rdf-schema#label> "compared to value"@en .
+<http://w3id.org/abecto/vocabulary#correspondsNotToResource> <http://www.w3.org/2000/01/rdf-schema#comment> "A resource that not corresponds to this resource."@en .
+_:n786abd39b7414d849b298f5008c0c98db9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n786abd39b7414d849b298f5008c0c98db10 .
+<http://w3id.org/abecto/vocabulary#correspondsNotToResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://w3id.org/abecto/vocabulary#keyVariableName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#Aspect> .
+<http://w3id.org/abecto/vocabulary#key> <http://www.w3.org/2000/01/rdf-schema#comment> "The key or name of a parameter."@en .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/2000/01/rdf-schema#label> "associated dataset"@en .
+<http://w3id.org/abecto/vocabulary#comparedToDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "The dataset in comparison to that were derived some meta data, such as deviations, value omissions, resource omissions, or quality measurements."@en .
+<http://w3id.org/abecto/vocabulary#correspondsToResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://w3id.org/abecto/vocabulary#hasParameter> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/abecto/vocabulary#Parameter> .
+<http://w3id.org/abecto/vocabulary#key> <http://www.w3.org/2000/01/rdf-schema#label> "key"@en .
+<http://w3id.org/abecto/vocabulary#marCompletenessThomas08> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dqv#Metric> .
+<http://w3id.org/abecto/vocabulary> <http://purl.org/dc/terms/title> "ABECTO Vocabulary"@en .
+<http://w3id.org/abecto/vocabulary> <http://purl.org/vocab/vann/preferredNamespacePrefix> "av" .
+<http://w3id.org/abecto/vocabulary#affectedAspect> <http://www.w3.org/2000/01/rdf-schema#label> "affected aspect"@en .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2004/03/trix/rdfg-1/> .
+<http://w3id.org/abecto/vocabulary#marCompletenessThomas08> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://doi.org/10.1145/1390334.1390531> .
+<http://w3id.org/abecto/vocabulary#marCompletenessThomas08> <http://www.w3.org/2000/01/rdf-schema#comment> "The ratio of the completeness of a dataset compared to multiple other datasets regarding a certain aspect estimated using the mark and recapture method as defined in Paul Thomas, 2008, Generalising multiple capture-recapture to non-uniform sample sizes, https://doi.org/10.1145/1390334.1390531."@en .
+<http://w3id.org/abecto/vocabulary#value> <http://www.w3.org/2000/01/rdf-schema#comment> "The value of a parameter."@en .
+<http://w3id.org/abecto/vocabulary#WrongValue> <http://www.w3.org/2000/01/rdf-schema#comment> "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the incorrectness of a value (av:affectedValue) of a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect)."@en .
+<http://w3id.org/abecto/vocabulary#StepExecution> <http://www.w3.org/2000/01/rdf-schema#label> "step execution"@en .
+<http://w3id.org/abecto/vocabulary#hasParameter> <http://www.w3.org/2000/01/rdf-schema#label> "has parameter"@en .
+<http://w3id.org/abecto/vocabulary#VariablePath> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#priorVersion> <http://w3id.org/abecto/vocabulary/1.1.0> .
+<http://w3id.org/abecto/vocabulary#MetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/03/trix/rdfg-1/Graph> .
+_:n786abd39b7414d849b298f5008c0c98db5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/abecto/vocabulary#VariablePath> <http://www.w3.org/2000/01/rdf-schema#label> "variable path"@en .
+<http://w3id.org/abecto/vocabulary#affectedAspect> <http://www.w3.org/2000/01/rdf-schema#domain> _:n786abd39b7414d849b298f5008c0c98db3 .
+<http://w3id.org/abecto/vocabulary#absoluteCoverage> <http://www.w3.org/2000/01/rdf-schema#label> "absolute coverage"@en .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/abecto/vocabulary#ValueOmission> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#key> <http://www.w3.org/2000/01/rdf-schema#label> "name"@en .
+<http://w3id.org/abecto/vocabulary#QualityAnnotationBody> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/dcat> .
+<http://w3id.org/abecto/vocabulary#Issue> <http://www.w3.org/2000/01/rdf-schema#label> "issue"@en .
+_:n786abd39b7414d849b298f5008c0c98db1 <https://schema.org/identifier> <https://orcid.org/0000-0002-7733-0193> .
+<http://w3id.org/abecto/vocabulary#Aspect> <http://www.w3.org/2000/01/rdf-schema#label> "aspect"@en .
+<http://w3id.org/abecto/vocabulary#propertyPath> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+_:n786abd39b7414d849b298f5008c0c98db4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n786abd39b7414d849b298f5008c0c98db5 .
+<http://w3id.org/abecto/vocabulary#relativeCoverage> <http://www.w3.org/2000/01/rdf-schema#comment> "The ratio of resources of a certain aspect in another dataset for that the assessed dataset contains a corresponding resource."@en .
+<http://w3id.org/abecto/vocabulary#comparedToDataset> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/dcat#Dataset> .
+<http://w3id.org/abecto/vocabulary#value> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#Parameter> .
+<http://w3id.org/abecto/vocabulary#AspectPattern> <http://www.w3.org/2000/01/rdf-schema#comment> "An aspect pattern determines the facts from a single dataset (av:associatedDataset) belonging to a specific aspect (av:ofAspect) using a SPARQL select query (av:definingQuery)."@en .
+<http://w3id.org/abecto/vocabulary#affectedValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#affectedValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The variable value of a resource of an aspect that is concerned by some meta data, such as deviations or issues."@en .
+<http://w3id.org/abecto/vocabulary#Deviation> <http://www.w3.org/2000/01/rdf-schema#label> "deviation"@en .
+<http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#label> "predefined meta data graph"@en .
+<http://w3id.org/abecto/vocabulary#variableName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n786abd39b7414d849b298f5008c0c98db6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/abecto/vocabulary#value> <http://www.w3.org/2000/01/rdf-schema#label> "value"@en .
+<http://w3id.org/abecto/vocabulary#comparedToDataset> <http://www.w3.org/2000/01/rdf-schema#label> "compared to dataset"@en .
+<http://w3id.org/abecto/vocabulary#javaClass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#Step> .
+<http://w3id.org/abecto/vocabulary#hasParameter> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#StepExecution> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity that executes a single step of a plan. It is determined by the corresponding step (p-plan:correspondsToStep), start and end date time (prov:startedAtTime, prov:endedAtTime), and the used primary and meta data graphs (prov:used)."@en .
+<http://w3id.org/abecto/vocabulary#javaClass> <http://www.w3.org/2000/01/rdf-schema#comment> "The associated Java class of a processor. The value is expected to be a resource represented by an IRI with the \"java\" scheme and the fully qualified name of the class as path, e.g. \"<java:java.util.Collection>\"."@en .
+<http://w3id.org/abecto/vocabulary#definingQuery> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+_:n786abd39b7414d849b298f5008c0c98db3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/abecto/vocabulary#PrimaryDataGraph> <http://www.w3.org/2000/01/rdf-schema#label> "primary data graph"@en .
+<http://w3id.org/abecto/vocabulary#definingQuery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/abecto/vocabulary#Parameter> <http://www.w3.org/2000/01/rdf-schema#label> "parameter"@en .
+<http://w3id.org/abecto/vocabulary#StepExecution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#Plan> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#propertyPath> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#VariablePath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#comparedToDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#Plan> <http://www.w3.org/2000/01/rdf-schema#comment> "An ABECTO execution plan."@en .
+<http://w3id.org/abecto/vocabulary#marCompletenessThomas08> <http://www.w3.org/2000/01/rdf-schema#label> "mark and recapture"@en .
+<http://w3id.org/abecto/vocabulary#deduplicatedCount> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of deduplicated resources or deduplicated property values of a certain aspect in a dataset."@en .
+_:n786abd39b7414d849b298f5008c0c98db7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#definingQuery> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#AspectPattern> .
+<http://w3id.org/abecto/vocabulary#variableName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#VariablePath> .
+<http://w3id.org/abecto/vocabulary#hasParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#ResourceOmission> <http://www.w3.org/2000/01/rdf-schema#label> "resource omission"@en .
+<http://w3id.org/abecto/vocabulary#Parameter> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/dcat#Dataset> .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#comment> "A predefined meta data graph that will be taken into account during the execution of a step without being the execution result of a preceding step."@en .
+<http://w3id.org/abecto/vocabulary#keyVariableName> <http://www.w3.org/2000/01/rdf-schema#label> "key variable name"@en .
+_:n786abd39b7414d849b298f5008c0c98db2 <https://schema.org/name> "Heinz Nixdorf Chair for Distributed Information Systems, Friedrich Schiller University Jena" .
+<http://w3id.org/abecto/vocabulary#Aspect> <http://www.w3.org/2000/01/rdf-schema#comment> "An aspect denotes a group of facts from multiple datasets belonging to corresponding features or classes of resources."@en .
+<http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#definingQuery> <http://www.w3.org/2000/01/rdf-schema#label> "defining query"@en .
+<http://w3id.org/abecto/vocabulary#comparedToResource> <http://www.w3.org/2000/01/rdf-schema#label> "compared to resource"@en .
+<http://w3id.org/abecto/vocabulary#ValueOmission> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#correspondsToResource> <http://www.w3.org/2000/01/rdf-schema#label> "corresponds to resource"@en .
+<http://w3id.org/abecto/vocabulary#variableName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/abecto/vocabulary#affectedValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#issueType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#relativeCoverage> <http://www.w3.org/ns/dqv#inDimension> <http://www.w3.org/2016/05/ldqd#completeness> .
+_:n786abd39b7414d849b298f5008c0c98db3 <http://www.w3.org/2002/07/owl#unionOf> _:n786abd39b7414d849b298f5008c0c98db4 .
+<http://w3id.org/abecto/vocabulary#issueType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/abecto/vocabulary#VariablePath> <http://www.w3.org/2000/01/rdf-schema#comment> "A connection between the key variable and another variable (av:variableName) of an aspect by a property path (av:propertyPath)."@en .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.w3.org/ns/dqv#QualityMeasurement> .
+<http://w3id.org/abecto/vocabulary#value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/abecto/vocabulary#Parameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#key> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#Parameter> .
+<http://w3id.org/abecto/vocabulary#StepExecution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Activity> .
+<http://w3id.org/abecto/vocabulary#variableName> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of a variable the key variable of an aspect is connected with via a certain property path (av:propertyPath)."@en .
+<http://w3id.org/abecto/vocabulary#ofAspect> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/abecto/vocabulary#Aspect> .
+<http://w3id.org/abecto/vocabulary> <http://purl.org/dc/terms/creator> _:n786abd39b7414d849b298f5008c0c98db1 .
+<http://w3id.org/abecto/vocabulary#correspondsNotToResource> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:n786abd39b7414d849b298f5008c0c98db9 .
+<http://w3id.org/abecto/vocabulary#keyVariableName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/abecto/vocabulary#ValueOmission> <http://www.w3.org/2000/01/rdf-schema#label> "value omission"@en .
+<http://w3id.org/abecto/vocabulary#correspondsToResource> <http://www.w3.org/2000/01/rdf-schema#comment> "A resource that corresponds to this resource."@en .
+<http://w3id.org/abecto/vocabulary#MetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#deduplicatedCount> <http://www.w3.org/2000/01/rdf-schema#label> "deduplicated count"@en .
+<http://w3id.org/abecto/vocabulary#absoluteCoverage> <http://www.w3.org/ns/dqv#inDimension> <http://www.w3.org/2016/05/ldqd#completeness> .
+<http://w3id.org/abecto/vocabulary#affectedAspect> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/abecto/vocabulary#Aspect> .
+<http://w3id.org/abecto/vocabulary#javaClass> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#correspondsNotToResource> <http://www.w3.org/2000/01/rdf-schema#label> "corresponds not to resource"@en .
+<http://w3id.org/abecto/vocabulary#AspectPattern> <http://www.w3.org/2000/01/rdf-schema#label> "aspect pattern"@en .
+<http://w3id.org/abecto/vocabulary#ValueOmission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#Step> <http://www.w3.org/2000/01/rdf-schema#comment> "A single step in an ABECTO execution plan defined by the processor class, preceding steps (p-plan:isPrecededBy), parameters (av:hasParameter), and predefined meta data (av:predefinedMetaDataGraph)."@en .
+<http://w3id.org/abecto/vocabulary#Plan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:n786abd39b7414d849b298f5008c0c98db1 <https://schema.org/affiliation> _:n786abd39b7414d849b298f5008c0c98db2 .
+<http://w3id.org/abecto/vocabulary#PrimaryDataGraph> <http://www.w3.org/2000/01/rdf-schema#comment> "A primary data graph is a RDF graph that contains primary data of a dataset (av:associatedDataset)."@en .
+<http://w3id.org/abecto/vocabulary#absoluteCoverage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#QualityMeasurement> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#javaClass> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://docs.oracle.com/javase/specs/jls/se16/html/jls-6.html#jls-6.7"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/abecto/vocabulary#javaClass> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://docs.oracle.com/javase/specs/jls/se16/html/jls-3.html#jls-3.8"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://w3id.org/abecto/vocabulary#ResourceOmission> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#absoluteCoverage> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of resources of a certain aspect in another dataset for that the assessed dataset contains a corresponding resource."@en .
+<http://w3id.org/abecto/vocabulary#QualityMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dqv#QualityMeasurement> .
+<http://w3id.org/abecto/vocabulary#relativeCoverage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/prov> .
+<http://w3id.org/abecto/vocabulary#Step> <http://www.w3.org/2000/01/rdf-schema#label> "step"@en .
+<http://w3id.org/abecto/vocabulary#issueType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#Issue> .
+<http://w3id.org/abecto/vocabulary#definingQuery> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/abecto/vocabulary#comparedToValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#correspondsNotToResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#Step> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#comparedToValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The value in comparison to that were derived some meta data, such as deviations, or value omissions."@en .
+<http://w3id.org/abecto/vocabulary#Issue> <http://www.w3.org/2000/01/rdf-schema#comment> "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource or a dataset (oa:hasTarget). It describes an issue of a certain type (av:issueType) with a description (rdfs:comment). An issue might affect a certain aspect (av:Aspect), a certain aspect variable (av:affectedVariableName), or a certain aspect variable value (av:affectedValue)."@en .
+<http://w3id.org/abecto/vocabulary#issueType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/abecto/vocabulary#count> <http://www.w3.org/ns/dqv#inDimension> <http://www.w3.org/2016/05/ldqd#completeness> .
+<http://w3id.org/abecto/vocabulary#Plan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/p-plan#Plan> .
+<http://w3id.org/abecto/vocabulary#MetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dqv#QualityMetadata> .
+<http://w3id.org/abecto/vocabulary#issueType> <http://www.w3.org/2000/01/rdf-schema#label> "issue type"@en .
+<http://w3id.org/abecto/vocabulary#ResourceOmission> <http://www.w3.org/2000/01/rdf-schema#comment> "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a dataset (oa:hasTarget). It denotes the absent of a corresponding resource from a specified aspect (av:affectedAspect) in comparison to a resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en .
+<http://w3id.org/abecto/vocabulary> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
+<http://w3id.org/abecto/vocabulary#propertyPath> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#VariablePath> .
+<http://w3id.org/abecto/vocabulary> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/abecto/vocabulary#" .
+<http://w3id.org/abecto/vocabulary#QualityMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality measurement represents the result value (dqv:value) of an evaluation of a given dataset (dqv:computedOn) against a specific quality metric (dqv:isMeasurementOf)."@en .
+<http://w3id.org/abecto/vocabulary#keyVariableName> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of a variable that serves as primary key for an aspect."@en .
+<http://w3id.org/abecto/vocabulary#deduplicatedCount> <http://www.w3.org/ns/dqv#inDimension> <http://www.w3.org/2016/05/ldqd#completeness> .
+<http://w3id.org/abecto/vocabulary#comparedToResource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary> <http://purl.org/dc/terms/description> "The ABECTO Vocabulary (AV) is a vocabulary for the description of execution plans and results of the ABox Evaluation and Comparison Tool for Ontologies (ABECTO)."@en .
+<http://w3id.org/abecto/vocabulary#relativeCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dqv#Metric> .
+<http://w3id.org/abecto/vocabulary#QualityMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:n786abd39b7414d849b298f5008c0c98db10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/abecto/vocabulary#PrimaryDataGraph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#WrongValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#Issue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+_:n786abd39b7414d849b298f5008c0c98db8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/abecto/vocabulary#QualityMeasurement> .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2016/05/ldqd> .
+<http://w3id.org/abecto/vocabulary#Aspect> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#keyVariableName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/abecto/vocabulary#definingQuery> <http://www.w3.org/2000/01/rdf-schema#comment> "The query that defines the pattern of an aspect for a certain dataset."@en .
+<http://w3id.org/abecto/vocabulary#WrongValue> <http://www.w3.org/2000/01/rdf-schema#label> "wrong value"@en .
+<http://w3id.org/abecto/vocabulary#keyVariableName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n786abd39b7414d849b298f5008c0c98db10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/abecto/vocabulary#correspondsToResource> .
+<http://w3id.org/abecto/vocabulary#Step> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#count> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of resources or property values of a certain aspect in a dataset."@en .
+_:n786abd39b7414d849b298f5008c0c98db1 <https://schema.org/name> "Jan Martin Keil" .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/abecto/vocabulary#Deviation> .
+<http://w3id.org/abecto/vocabulary> <http://purl.org/dc/terms/modified> "2023-04-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://w3id.org/abecto/vocabulary#ResourceOmission> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#PrimaryDataGraph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Entity> .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/abecto/vocabulary#Step> .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/abecto/vocabulary#PrimaryDataGraph> .
+<http://w3id.org/abecto/vocabulary#count> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#absoluteCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dqv#Metric> .
+<http://w3id.org/abecto/vocabulary#AspectPattern> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary> <http://purl.org/dc/terms/created> "2022-08-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://w3id.org/abecto/vocabulary#Deviation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#Parameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A generic parameter defined by a key String (av:key) and a value literal (rdf:value)."@en .
+<http://w3id.org/abecto/vocabulary#MetaDataGraph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#value> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/abecto/vocabulary#propertyPath> <http://www.w3.org/2000/01/rdf-schema#label> "property path"@en .
+<http://w3id.org/abecto/vocabulary#PrimaryDataGraph> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#ofAspect> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#deduplicatedCount> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/dqv> .
+<http://w3id.org/abecto/vocabulary#Deviation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#affectedVariableName> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/abecto/vocabulary#ValueOmission> .
+<http://w3id.org/abecto/vocabulary#ValueOmission> <http://www.w3.org/2000/01/rdf-schema#comment> "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the absent of a certain value for a specified variable (av:affectedVariableName) from a specified aspect (av:affectedAspect) in comparison to a value (av:comparedToValue) of a corresponding resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en .
+_:n786abd39b7414d849b298f5008c0c98db4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "The dataset to that a resource belongs, such as primary or meta data graphs, aspect patterns or steps."@en .
+<http://w3id.org/abecto/vocabulary#WrongValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/abecto/vocabulary#QualityAnnotationBody> .
+<http://w3id.org/abecto/vocabulary#associatedDataset> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://w3id.org/abecto/vocabulary#MetaDataGraph> .
+<http://w3id.org/abecto/vocabulary#hasParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A parameter that was, is, or will be involved in an execution."@en .
+<http://w3id.org/abecto/vocabulary#MetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#label> "meta data graph"@en .
+<http://w3id.org/abecto/vocabulary#QualityMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "quality measurement"@en .
+<http://w3id.org/abecto/vocabulary#issueType> <http://www.w3.org/2000/01/rdf-schema#comment> "The described custom type of an issue."@en .
+<http://w3id.org/abecto/vocabulary#javaClass> <http://www.w3.org/2000/01/rdf-schema#label> "processor class"@en .
+<http://w3id.org/abecto/vocabulary#count> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dqv#Metric> .
+<http://w3id.org/abecto/vocabulary#ofAspect> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#AspectPattern> .
+<http://w3id.org/abecto/vocabulary#correspondsToResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://w3id.org/abecto/vocabulary#value> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#ResourceOmission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary#ofAspect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/abecto/vocabulary#predefinedMetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/abecto/vocabulary#Step> .
+<http://w3id.org/abecto/vocabulary#comparedToDataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#comparedToValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+_:n786abd39b7414d849b298f5008c0c98db2 <https://schema.org/url> <https://www.fusion.uni-jena.de/> .
+<http://w3id.org/abecto/vocabulary#AspectPattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/abecto/vocabulary> <http://www.w3.org/2002/07/owl#imports> <http://www.opmw.org/p-plan.owl> .
+<http://w3id.org/abecto/vocabulary#comparedToValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/abecto/vocabulary#deduplicatedCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dqv#Metric> .
+_:n786abd39b7414d849b298f5008c0c98db5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/abecto/vocabulary#QualityMeasurement> .
+<http://w3id.org/abecto/vocabulary#correspondsToResource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/abecto/vocabulary> .
+<http://w3id.org/abecto/vocabulary#MetaDataGraph> <http://www.w3.org/2000/01/rdf-schema#comment> "A meta data graph is a RDF graph that contains meta data of a dataset (dqv:computedOn)."@en .

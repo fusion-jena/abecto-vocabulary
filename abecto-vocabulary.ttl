@@ -36,10 +36,10 @@
     ] ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:created "2022-08-17"^^xsd:date ;
-    dcterms:modified "2023-03-09"^^xsd:date ;
-    owl:versionInfo "1.1.0" ;
-    owl:versionIRI <http://w3id.org/abecto/vocabulary/1.1.0> ;
-    owl:priorVersion <http://w3id.org/abecto/vocabulary/1.0.0> ;
+    dcterms:modified "2023-04-17"^^xsd:date ;
+    owl:versionInfo "1.2.0" ;
+    owl:versionIRI <http://w3id.org/abecto/vocabulary/1.2.0> ;
+    owl:priorVersion <http://w3id.org/abecto/vocabulary/1.1.0> ;
     .
 
 av:Plan a rdfs:Class ;
