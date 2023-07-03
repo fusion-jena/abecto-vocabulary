@@ -56,23 +56,16 @@ The vocabulary is intended to be used in a set of graphs. The main graph contain
 
 After execution, the main graph will further contain provenance information about the execution and the result graphs.
 
-![Visualization of the Vocabulary for ABECTO Execution Plans and Result Provenance](executionGraph.svg)
 
-**Deviations** should be represented inside a meta data graph using the following schema:
+![Visualization of the Vocabulary for ABECTO Execution Plans and Result Provenance](abecto-vocabulary-provenance.drawio.svg)
 
-![Visualization of the Vocabulary for Deviations](deviationGraph.svg)
+**Correspondences** and **Incorrespondences**, **Quality Measurements** and quality annotations (**Quality Measurements**, **Deviations**, **Value Omissions**, **Resource Omissions**, **Wrong Values**, other **Issues**) should be represented inside a meta data graph using the following schema:
 
-**Value Omissions** should be represented inside a meta data graph using the following schema:
+![Visualization of the Vocabulary for Comparison Results](abecto-vocabulary-results.drawio.svg)
 
-![Visualization of the Vocabulary for Value Omissions](valueOmissionGraph.svg)
+### Quality Annotations
 
-**Resource Omissions** should be represented inside a meta data graph using the following schema:
-
-![Visualization of the Vocabulary for Resource Omissions](resourceOmissionGraph.svg)
-
-**Wrong Values** should be represented inside a meta data graph using the following schema:
-
-![Visualization of the Vocabulary for Incorrect Values](wrongValuesGraph.svg)
+Example:
 
 ```turtle
 [ rdf:type      dqv:QualityAnnotation ;
@@ -85,25 +78,16 @@ After execution, the main graph will further contain provenance information abou
 ] .
 ```
 
-**Quality Measurements** should be represented inside a meta data graph using the following schema:
+### Correspondences and Incorrespondences
 
-![Visualization of the Vocabulary for Quality Measurements](qualityMeasurementGraph.svg)
-
-Custom **issues** should be represented inside a meta data graph using the following schema:
-
-![Visualization of the Vocabulary for Issues](issueGraph.svg)
-
-**Correspondences** and **incorrespondences** should be represented inside a meta data graph using the following schema:
-
-![Visualization of the Vocabulary for Correspondences](correspondenceGraph.svg)
+Examples:
 
 ```turtle
 ex2:bill av:correspondsToResource ex2:william, ex3:william, ex4:bill .
-ex1:people av:relevantResource ex2:bill, ex2:william, ex3:william, ex4:bill .
 ```
+
 ```turtle
 ex2:anna av:correspondsNotToResource ex3:anne .
-ex1:people av:relevantResource ex2:anna, ex3:anne .
 ```
 
 The reuse of `owl:sameAs`, `owl:equivalentClass`, `owl:differentFrom`, `owl:disjointWith`, and `owl:AllDisjointClasses` was rejected due to the following reasons:
