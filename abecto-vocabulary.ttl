@@ -280,6 +280,13 @@ av:issueType a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
+av:valueFilterCondition a owl:DatatypeProperty ;
+    rdfs:label "value filter condition"@en ;
+    rdfs:comment "The value filter condition that was applied to the variable values before the measurement has been performed."@en ;
+    rdfs:domain dqv:QualityMeasurement ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
 
 av:marCompletenessThomas08 a dqv:Metric ;
     rdfs:label "mark and recapture"@en ;
