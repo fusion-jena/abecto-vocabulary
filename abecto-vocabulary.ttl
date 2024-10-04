@@ -294,6 +294,18 @@ av:absoluteCoverage a dqv:Metric ;
     dqv:inDimension ldqd:completeness ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
+av:relativeCoveredness a dqv:Metric ;
+    rdfs:label "relative coveredness"@en ;
+    rdfs:comment "The ratio of resources of a certain aspect in the assessed dataset for that any other dataset contains a corresponding resource."@en ;
+    dqv:inDimension ldqd:trustworthiness ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
+av:absoluteCoveredness a dqv:Metric ;
+    rdfs:label "absolute coveredness"@en ;
+    rdfs:comment "The number of resources of a certain aspect in the assessed dataset for that any other dataset contains a corresponding resource."@en ;
+    dqv:inDimension ldqd:trustworthiness ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
 av:count a dqv:Metric ;
     rdfs:label "count"@en ;
     rdfs:comment "The number of resources or property values of a certain aspect in a dataset."@en ;
@@ -304,5 +316,11 @@ av:deduplicatedCount a dqv:Metric ;
     rdfs:label "deduplicated count"@en ;
     rdfs:comment "The number of deduplicated resources or deduplicated property values of a certain aspect in a dataset."@en ;
     dqv:inDimension ldqd:completeness ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
+av:duplicateCount a dqv:Metric ;
+    rdfs:label "duplicate count"@en ;
+    rdfs:comment "The number of duplicated resources or duplicated property values of a certain aspect in a dataset."@en ;
+    dqv:inDimension ldqd:conciseness ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
