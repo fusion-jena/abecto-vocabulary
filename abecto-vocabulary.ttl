@@ -115,6 +115,12 @@ av:ResourceOmission a owl:Class ;
     rdfs:comment "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a dataset (oa:hasTarget). It denotes the absent of a corresponding resource from a specified aspect (av:affectedAspect) in comparison to a resource (av:comparedToResource) from a specified dataset (av:comparedToDataset)."@en ;
     rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
     .
+av:ResourceDuplicate a owl:Class ;
+    rdfs:subClassOf av:QualityAnnotationBody ;
+    rdfs:label "resource omission"@en ;
+    rdfs:comment "An instance serves as the body (oa:hasBody) of a dqv:QualityAnnotation on a resource (oa:hasTarget). It denotes the presence of a corresponding resource (av:comparedToResource) of a specified aspect (av:affectedAspect) in the same dataset."@en ;
+    rdfs:isDefinedBy <http://w3id.org/abecto/vocabulary> ;
+    .
 av:Issue a owl:Class ;
     rdfs:subClassOf av:QualityAnnotationBody ;
     rdfs:label "issue"@en ;

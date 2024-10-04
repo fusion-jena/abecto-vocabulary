@@ -59,7 +59,7 @@ After execution, the main graph will further contain provenance information abou
 
 ![Visualization of the Vocabulary for ABECTO Execution Plans and Result Provenance](abecto-vocabulary-provenance.drawio.svg)
 
-**Correspondences** and **Incorrespondences**, **Quality Measurements** and quality annotations (**Quality Measurements**, **Deviations**, **Value Omissions**, **Resource Omissions**, **Wrong Values**, other **Issues**) should be represented inside a meta data graph using the following schema:
+**Correspondences** and **Incorrespondences**, **Quality Measurements** and quality annotations (**Quality Measurements**, **Deviations**, **Value Omissions**, **Resource Omissions**, **Wrong Values**, **Resource Duplicate**, other **Issues**) should be represented inside a meta data graph using the following schema:
 
 ![Visualization of the Vocabulary for Comparison Results](abecto-vocabulary-results.drawio.svg)
 
